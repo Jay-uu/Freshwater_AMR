@@ -1,0 +1,6 @@
+#Ignore logfiles
+logs
+*.log
+
+#Ignore results (for now)
+analysis/
