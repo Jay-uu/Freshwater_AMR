@@ -26,7 +26,7 @@ conda activate abricate_env
 
 echo '======================= Run Abricate ======================='
 #run abricate
-abricate --db $DB bins/*.fna.gz > res/${DB}_results.tab
+abricate --db $DB --minid 50 bins/*.fna.gz > res/${DB}_50results.tab
 
 echo '======================= Done running Abricate ==================='
 #move results to slow drive

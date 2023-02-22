@@ -23,10 +23,9 @@ conda activate rgi_env
 echo '========== Run RGI =========='
 for file in bins/*
 do
-   BIN_ID= basename $file .fna.gz
-   echo 'running bin:'
-   echo "$BIN_ID"
-   rgi main --input_sequence $file --output_file res/$BIN_ID.tab -n 23 --include_loose -a DIAMOND --low_quality
+   BIN_ID=`basename $file .fna.gz`
+   echo "running bin: $BIN_ID"
+   rgi main --input_sequence $file --output_file res/${BIN_ID} -n 23 --include_loose -a DIAMOND --low_quality --clean
 done
 
 echo '========== RGI done =========='

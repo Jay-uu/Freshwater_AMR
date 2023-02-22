@@ -6,8 +6,7 @@ date
 #assign variables
 WORK_DIR=/home/jay/work_dir
 BINS=/home/moritz/data/data_submit/bins/ErkenSummer
-RESULT=/home/jay/data/erken_results/04_GTDB-Tk
-DB=$1
+RESULT=/home/jay/data/erken_results/04_taxonomy
 #go to work directory
 cd $WORK_DIR
 mkdir res
@@ -26,7 +25,7 @@ conda activate gtdbtk_env
 
 echo '======================= Run GTDB-Tk ======================='
 #add command
-
+gtdbtk classify_wf --genome_dir bins --out_dir res --cpus <ask moritz>
 
 echo '======================= Done running GTDB-Tk ==================='
 #move results to slow drive
