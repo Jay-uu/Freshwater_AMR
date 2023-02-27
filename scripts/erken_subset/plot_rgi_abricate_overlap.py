@@ -4,7 +4,7 @@
 Created on Mon Feb 13 15:16:12 2023
 
 @author: Hakan
-Bad messy script to compare RGI and Abricate to CARD
+Messy script to compare RGI and Abricate to CARD
 """
 import os
 import pandas as pd
@@ -26,41 +26,90 @@ returns aro as int
 """
 def find_aro(gene, index):
     aro = index.loc[index['ARO Name']==gene, 'ARO Accession'].squeeze()
-    return int(aro)
+    mech = index.loc[index['ARO Accession']==aro, 'Resistance Mechanism'].squeeze()
+    return int(aro), mech
 
+print('=====Reading and formatting index======')
 #format index file
-col_gone = ['CVTERM ID', 'Model Sequence ID','Model ID', 'Model Name', 'Protein Accession',
-            'AMR Gene Family','Drug Class', 'Resistance Mechanism', 'CARD Short Name']
+#col_gone = ['CVTERM ID', 'Model Sequence ID','Model ID', 'Model Name', 'Protein Accession',
+#            'AMR Gene Family','Drug Class', 'Resistance Mechanism', 'CARD Short Name']
 index = pd.read_csv(index_file, sep='\t', header=0)
-index = index.drop(col_gone, axis=1)
+#index = index.drop(col_gone, axis=1)
 index['ARO Name'] = index['ARO Name'].str.replace(r' ', '_')
 index['ARO Accession'] = index['ARO Accession'].str.replace(r'ARO:', '')
 
+print('====== Reading and formatting abricate results======')
 abricate = pd.read_csv(abricate_file, sep='\t', header=0)
 abricate['#FILE']=abricate['#FILE'].str.replace(r'bins/','')
 
+print('Adding ARO terms')
 # Add ARO terms to abricate results
 #dtype for ARO in rgi is int64
+#also adding the resistance mechanism
 abricate['ARO']=0
+abricate['Mechanism']=''
 for ind in abricate.index:
     aro = find_aro(abricate['GENE'][ind], index)
-    abricate.loc[ind, 'ARO'] = aro
+    abricate.loc[ind, 'ARO'] = aro[0]
+    abricate.loc[ind, 'Mechanism'] = aro[1]
 
+print('======Reading and formatting RGI results====')
 #RGI-results
 rgi = pd.DataFrame()
 rgi = pd.concat([pd.read_csv(rgi_dir_path+'//'+file, sep='\t', header=0)
           for file in os.listdir(rgi_dir_path) if file.endswith('.txt')],
                 ignore_index=True)
-rgi_del_col = ['ORF_ID', 'Model_type','Predicted_DNA','Predicted_Protein',
-               'CARD_Protein_Sequence','Nudged', 'Note']
-rgi = rgi.drop(rgi_del_col, axis=1)
+#rgi_del_col = ['ORF_ID', 'Model_type','Predicted_DNA','Predicted_Protein',
+#               'CARD_Protein_Sequence','Nudged', 'Note']
+#rgi = rgi.drop(rgi_del_col, axis=1)
+# give rgi a bin name column matching abricates format
+rgi['#FILE']=''
+for ind in rgi.index:
+    bin = rgi['Contig'][ind].split(':',1)[0]
+    rgi.loc[ind, '#FILE'] = 'ErkenSummer_megahit_metabat_'+bin+'.fna.gz'
 
-# Plot venn diagram and save
+# Takes two dataframes, plots a venn diagram of specified column, saves as png
+def plot_venn(df1, df2, df1_name, df2_name, fig_name, column, title=''):
+    if not df1.empty and not df2.empty:
+        plt.figure(figsize=(4,4))
+        set1 = set(df1[column])
+        set2 = set(df2[column])
+        venn2([set1, set2], (df1_name, df2_name))
+        plt.title(title)
+        plt.savefig(fig_name+'.png')
+        plt.show()
+    else:
+        print('One or both of the dataframes are empty.')
 
-plt.figure(figsize=(4,4))
-set1 = set(abricate['ARO'])
-set2 = set(rgi['ARO'])
+# plot venn diagrams
+print('=====Plotting first venn=====')
+plot_venn(abricate, rgi, 'Abricate', 'RGI', 'venn_abr_rgi','ARO')
+print('=====Plotting Strict venn======')
+plot_venn(abricate, rgi[rgi['Cut_Off']=='Strict'], 'Abricate', 'RGI Strict', 'venn_abr_rgi_strict','ARO')
+print('======Plotting Perfect venn=====')
+plot_venn(abricate, rgi[rgi['Cut_Off']=='Perfect'], 'Abricate', 'RGI Perfect', 'venn_abr_rgi_perfect','ARO')
 
-venn2([set1, set2], ('Abricate', 'RGI'))
-plt.savefig('venn_abr_rgi.png')
-plt.show()
+print('=====Plotting bin venns=====')
+plot_venn(abricate, rgi, 'Abricate', 'RGI', 'bin_venn_abr_rgi','#FILE','Bin overlap')
+print('=====Strict======')
+plot_venn(abricate, rgi[rgi['Cut_Off']=='Strict'], 'Abricate', 'RGI Strict', 'bin_venn_abr_rgi_strict','#FILE','Strict bin overlap')
+print('======Perfect=====')
+plot_venn(abricate, rgi[rgi['Cut_Off']=='Perfect'], 'Abricate', 'RGI Perfect', 'bin_venn_abr_rgi_perfect','#FILE', 'Perfect bin overlap')
+
+#Find differences
+print('===== Finding differences =====')
+aro_abr = abricate['ARO'].to_list()
+aro_rgi = rgi['ARO'].to_list()
+s = set(aro_rgi)
+aro_diff = [x for x in aro_abr if x not in s]
+
+print('AROs that are in abricate res but not in rgi res:')
+print(aro_diff)
+
+aro_abr = abricate['ARO'].to_list()
+aro_rgi = rgi['ARO'][rgi['Cut_Off']=='Strict'].to_list()
+s = set(aro_rgi)
+aro_sim = [x for x in aro_abr if x in s]
+
+print('AROs that are in common between abricate and RGI Strict:')
+print(aro_sim)
