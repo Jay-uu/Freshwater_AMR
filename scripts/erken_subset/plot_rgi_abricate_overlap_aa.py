@@ -17,7 +17,6 @@ index_file=r"/home/jay/data/erken_results/03_rgi/card_stuff/aro_index.tsv"
 rgi_dir_path=r"/home/jay/data/erken_results/03_rgi/res_aa"
 abricate_file=r"/home/jay/data/erken_results/02_abricate/card_coding_50results.tab"
 
-
 """
 a function that takes an accession and gene, then finds which aro it
 corresponds to. Also index should be a file with ARO accessions
@@ -64,10 +63,13 @@ rgi = pd.concat([pd.read_csv(rgi_dir_path+'//'+file, sep='\t', header=0)
 #rgi = rgi.drop(rgi_del_col, axis=1)
 # give rgi a bin name column matching abricates format
 rgi['#FILE']=''
+rgi['SEQUENCE']=''
 for ind in rgi.index:
     bin = rgi['ORF_ID'][ind].split(' ',1)[0]
     bin = bin.rsplit('_',1)[0]
     rgi.loc[ind, '#FILE'] = bin + '.ffn.gz'
+    seq = rgi['ORF_ID'][ind].split(' ')
+    rgi.loc[ind, 'SEQUENCE']=seq[0]
     print(bin + ': Done')
 
 # Takes two dataframes, plots a venn diagram of specified column, saves as png
@@ -98,6 +100,17 @@ plot_venn(abricate, rgi[rgi['Cut_Off']=='Strict'], 'Abricate', 'RGI Strict', 'bi
 print('======Perfect=====')
 plot_venn(abricate, rgi[rgi['Cut_Off']=='Perfect'], 'Abricate', 'RGI Perfect', 'bin_venn_abr_rgi_perfect_aa','#FILE', 'Perfect AA bin overlap')
 
+print('=====Plotting Sequence venns=====')
+plot_venn(abricate, rgi, 'Abricate', 'RGI', 'seq_venn_abr_rgi_aa','SEQUENCE','AA Sequence overlap')
+plot_venn(abricate, rgi[rgi['Cut_Off']=='Strict'], 'Abricate', 'RGI Strict', 'seq_venn_abr_rgi_strict_aa','SEQUENCE','Strict AA Sequence overlap')
+
+print('=====Plotting Best hits venns=====')
+plot_venn(abricate[abricate['%IDENTITY']>75], rgi[rgi['Cut_Off']=='Strict'], 'Abricate', 'RGI Strict', 'bin_venn_abr75_rgi_strict_aa','#FILE','AA best bins overlap')
+plot_venn(abricate[abricate['%IDENTITY']>75], rgi[rgi['Cut_Off']=='Strict'], 'Abricate', 'RGI Strict', 'aro_venn_abr75_rgi_strict_aa','ARO','AA best ARO overlap')
+
+plot_venn(abricate[abricate['%IDENTITY']>75], rgi[rgi['Cut_Off']=='Strict'], 'Abricate', 'RGI Strict', 'seq_venn_abr75_rgi_strict_aa','SEQUENCE','AA best Sequence overlap')
+
+
 #Find differences
 print('===== Finding differences =====')
 aro_abr = abricate['ARO'].to_list()
@@ -115,3 +128,4 @@ aro_sim = [x for x in aro_abr if x in s]
 
 print('AROs that are in common between abricate and RGI Strict:')
 print(aro_sim)
+
