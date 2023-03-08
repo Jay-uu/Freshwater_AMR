@@ -113,7 +113,7 @@ for b in range(len(bins)):
     print(f'Adding bin: {bins[b]}')
     if taxonomy[taxonomy['user_genome']==bins[b]].empty:
         tax = 'Unclassified'
-    else
+    else:
         tax = taxonomy['classification'][taxonomy['user_genome']==bins[b]].squeeze()
     t_dic = {'Bin_Id': bins[b], 'ARO': comb_tofile['ARO'][comb_tofile['#FILE']==bins[b]].to_list(),
              'Completeness': checkm[bins[b]]['Completeness'], 'Contamination': checkm[bins[b]]['Contamination'],
