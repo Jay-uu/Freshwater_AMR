@@ -11,13 +11,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib_venn import venn2
 import json
+import ast
 
 #File and directory paths
 os.chdir('/home/jay/work_dir/python')
 index_file=r"/home/jay/data/erken_results/03_rgi/card_stuff/aro_index.tsv"
 rgi_dir_path=r"/home/jay/data/erken_results/03_rgi/res_aa"
 abricate_file=r"/home/jay/data/erken_results/02_abricate/card_coding_50results.tab"
-
+checkm_file=r"/home/jay/data/erken_results/01_checkm/res/parsed_summary.txt"
+taxonomy_file=r"/home/jay/data/erken_results/05_taxonomy/gtdbtk.bac120.summary.tsv"
 """
 a function that takes an accession and gene, then finds which aro it
 corresponds to. Also index should be a file with ARO accessions
@@ -74,24 +76,50 @@ for ind in rgi.index:
     print(bin + ': Done')
 
 #make a file with bin_gene(bin name + seq number), aro, tool, &identity/Best_Identities (depending on tool)
+print('=====Creating aro_info file======')
 meta_abr =abricate.loc[:,('SEQUENCE','ARO', '%IDENTITY')]
 meta_abr['TOOL'] = 'ABR'
 meta_rgi = rgi.loc[:,('SEQUENCE','ARO')]
 meta_rgi['%IDENTITY'] = rgi.loc[:,('Best_Identities')]
 meta_rgi['TOOL'] = 'RGI'
 meta = pd.concat([meta_abr,meta_rgi],ignore_index=True)
-#add part where this gets made into a tsv!!!!!!!!
+meta.to_csv('erken_aro_info.csv', index=False)
 
+print('=====Reading checkm data======')
+with open(checkm_file) as f:
+    data = f.read()
+
+checkm = ast.literal_eval(data)
+
+print('=====Reading GTDB-Tk data======')
+taxonomy = pd.read_csv(taxonomy_file, sep='\t')
+taxonomy['user_genome'] = taxonomy['user_genome'].str.replace(r'.fna','')
+
+print('=====Combining Abricate and RGI Strict results======')
 #extract file and aro columns, combine to one dataframe
 #goal: make a json file
 rgi_tofile = rgi[['#FILE','ARO']][rgi['Cut_Off']!='Loose']
 abr_tofile=abricate[['#FILE','ARO']]
 comb_tofile = pd.concat([abr_tofile,rgi_tofile],ignore_index=True)
 
+print('Creating nested dictionary')
+#bin names and aros in dictionary
 comb_tofile['#FILE'] = comb_tofile['#FILE'].str.replace(r'.ffn.gz', '')
 bins = comb_tofile['#FILE'].unique()
+#one dict for all bins
 dic = {}
+#individual dicts for each bin, save in dic
 for b in range(len(bins)):
-    dic[bins[b]]=comb_tofile['ARO'][comb_tofile['#FILE']==bins[b]].to_list()
+    print(f'Adding bin: {bins[b]}')
+    if taxonomy[taxonomy['user_genome']==bins[b]].empty:
+        tax = 'Unclassified'
+    else
+        tax = taxonomy['classification'][taxonomy['user_genome']==bins[b]].squeeze()
+    t_dic = {'Bin_Id': bins[b], 'ARO': comb_tofile['ARO'][comb_tofile['#FILE']==bins[b]].to_list(),
+             'Completeness': checkm[bins[b]]['Completeness'], 'Contamination': checkm[bins[b]]['Contamination'],
+             'Lineage': tax}
+    dic[bins[b]]=t_dic
 
-#if I want taxonomy res and bin quality in same file, make separate dicts and then have each dict in one, with bin as key
+print('Saving dict as json file')
+with open("erken_amr.json", "w") as out:
+    json.dump(dic, out, indent=4) 
