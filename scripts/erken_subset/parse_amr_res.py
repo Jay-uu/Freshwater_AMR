@@ -14,7 +14,7 @@ import json
 import ast
 
 #File and directory paths
-os.chdir('/home/jay/work_dir/python')
+os.chdir('/home/jay/data/erken_results/06_combined_amr')
 index_file=r"/home/jay/data/erken_results/03_rgi/card_stuff/aro_index.tsv"
 rgi_dir_path=r"/home/jay/data/erken_results/03_rgi/res_aa"
 abricate_file=r"/home/jay/data/erken_results/02_abricate/card_coding_50results.tab"
