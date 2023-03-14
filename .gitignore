@@ -4,3 +4,6 @@ logs
 
 #Ignore results (for now)
 analysis/
+
+#Ignore the work-folder created by nextflow
+work/
