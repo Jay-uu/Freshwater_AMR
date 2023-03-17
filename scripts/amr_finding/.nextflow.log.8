@@ -1,0 +1,82 @@
+Mar-16 16:59:21.293 [main] DEBUG nextflow.cli.Launcher - $> nextflow run amr_finding.nf -resume
+Mar-16 16:59:21.597 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.10.6
+Mar-16 16:59:21.637 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/jay/.nextflow/plugins; core-plugins: nf-amazon@1.11.3,nf-azure@0.14.2,nf-codecommit@0.1.2,nf-console@1.0.4,nf-ga4gh@1.0.4,nf-google@1.4.5,nf-tower@1.5.6,nf-wave@0.5.3
+Mar-16 16:59:21.657 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-16 16:59:21.658 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-16 16:59:21.668 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-16 16:59:21.714 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-16 16:59:21.882 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 by probing script field
+Mar-16 16:59:21.923 [main] INFO  nextflow.cli.CmdRun - Launching `amr_finding.nf` [special_snyder] DSL1 - revision: 0edfa946c2
+Mar-16 16:59:21.927 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-16 16:59:21.927 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-16 16:59:21.945 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/jay/.nextflow/secrets/store.json
+Mar-16 16:59:21.967 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@732bb66d] - activable => nextflow.secret.LocalSecretsProvider@732bb66d
+Mar-16 16:59:22.133 [main] DEBUG nextflow.Session - Session UUID: c83b2cf8-1e7a-4d82-8eb1-1ed3e0e4e56e
+Mar-16 16:59:22.139 [main] DEBUG nextflow.Session - Run name: special_snyder
+Mar-16 16:59:22.139 [main] DEBUG nextflow.Session - Executor pool size: 24
+Mar-16 16:59:22.165 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-16 16:59:22.318 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.10.6 build 5843
+  Created: 23-01-2023 23:20 UTC (24-01-2023 00:20 CEST)
+  System: Linux 6.0.18-300.fc37.x86_64
+  Runtime: Groovy 3.0.13 on OpenJDK 64-Bit Server VM 17.0.3-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 3203996@kadath [77.235.248.125]
+  CPUs: 24 - Mem: 125.7 GB (22.5 GB) - Swap: 157 GB (101 GB)
+Mar-16 16:59:22.449 [main] DEBUG nextflow.Session - Work-dir: /home/jay/master_thesis/scripts/amr_finding/work [btrfs]
+Mar-16 16:59:22.450 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/jay/master_thesis/scripts/amr_finding/bin
+Mar-16 16:59:22.463 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-16 16:59:22.486 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-16 16:59:22.546 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-16 16:59:22.581 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 25; maxThreads: 1000
+Mar-16 16:59:22.828 [main] DEBUG nextflow.Session - Session start
+Mar-16 16:59:25.660 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-16 16:59:25.745 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/moritz/data/data_submit/bins/; pattern: ErkenSum*; options: [type:dir]
+Mar-16 16:59:26.159 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 16:59:26.160 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 16:59:26.166 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-16 16:59:26.171 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=24; memory=125.7 GB; capacity=24; pollInterval=100ms; dumpInterval=5m
+Mar-16 16:59:26.418 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 16:59:26.418 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 16:59:26.449 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 16:59:26.457 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 16:59:26.463 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 16:59:26.466 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 16:59:26.490 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 16:59:26.490 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 16:59:26.503 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: run_abricate, parse_checkm_summary, run_gtdbtk, run_rgi, checkm_process
+Mar-16 16:59:26.505 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-16 16:59:26.505 [main] DEBUG nextflow.Session - Session await
+Mar-16 16:59:26.894 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-16 16:59:26.900 [Task submitter] INFO  nextflow.Session - [14/db64d6] Submitted process > run_rgi (1)
+Mar-16 16:59:26.932 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-16 16:59:26.937 [Task submitter] INFO  nextflow.Session - [48/a26e50] Submitted process > run_abricate (1)
+Mar-16 16:59:26.995 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-16 16:59:26.999 [Task submitter] INFO  nextflow.Session - [53/e24f09] Submitted process > checkm_process (1)
+Mar-16 16:59:27.048 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-16 16:59:27.049 [Task submitter] INFO  nextflow.Session - [75/e4ec81] Submitted process > run_gtdbtk (1)
+Mar-16 16:59:36.455 [SIGINT handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGINT
+Mar-16 16:59:36.491 [SIGINT handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] parse_checkm_summary
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Mar-16 16:59:36.507 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-16 16:59:36.507 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-16 16:59:36.524 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (4)
+Mar-16 16:59:36.543 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill run_rgi (1) -- command: kill -TERM 3204136; exit: 1 
+ bash: line 1: kill: (3204136) - No such process
+
+Mar-16 16:59:36.561 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill run_abricate (1) -- command: kill -TERM 3204146; exit: 1 
+ bash: line 1: kill: (3204146) - No such process
+
+Mar-16 16:59:36.578 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill checkm_process (1) -- command: kill -TERM 3204164; exit: 1 
+ bash: line 1: kill: (3204164) - No such process
+
+Mar-16 16:59:36.594 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill run_gtdbtk (1) -- command: kill -TERM 3204179; exit: 1 
+ bash: line 1: kill: (3204179) - No such process
+
+Mar-16 16:59:36.600 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=1; retriesCount=0; abortedCount=3; succeedDuration=0ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=1; loadMemory=0; peakRunning=4; peakCpus=4; peakMemory=0; ]
+Mar-16 16:59:36.623 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-16 16:59:36.651 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

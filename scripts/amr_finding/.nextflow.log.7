@@ -1,0 +1,851 @@
+Mar-16 17:01:42.368 [main] DEBUG nextflow.cli.Launcher - $> nextflow run amr_finding.nf
+Mar-16 17:01:42.779 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.10.6
+Mar-16 17:01:42.812 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/jay/.nextflow/plugins; core-plugins: nf-amazon@1.11.3,nf-azure@0.14.2,nf-codecommit@0.1.2,nf-console@1.0.4,nf-ga4gh@1.0.4,nf-google@1.4.5,nf-tower@1.5.6,nf-wave@0.5.3
+Mar-16 17:01:42.826 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-16 17:01:42.827 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-16 17:01:42.830 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-16 17:01:42.868 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-16 17:01:43.086 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 by probing script field
+Mar-16 17:01:43.131 [main] INFO  nextflow.cli.CmdRun - Launching `amr_finding.nf` [thirsty_mclean] DSL1 - revision: 0edfa946c2
+Mar-16 17:01:43.132 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-16 17:01:43.132 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-16 17:01:43.172 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/jay/.nextflow/secrets/store.json
+Mar-16 17:01:43.198 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@18fdb6cf] - activable => nextflow.secret.LocalSecretsProvider@18fdb6cf
+Mar-16 17:01:43.333 [main] DEBUG nextflow.Session - Session UUID: 35ede7f6-1f7e-472c-9448-eeff22ea221d
+Mar-16 17:01:43.333 [main] DEBUG nextflow.Session - Run name: thirsty_mclean
+Mar-16 17:01:43.334 [main] DEBUG nextflow.Session - Executor pool size: 24
+Mar-16 17:01:43.359 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-16 17:01:43.476 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.10.6 build 5843
+  Created: 23-01-2023 23:20 UTC (24-01-2023 00:20 CEST)
+  System: Linux 6.0.18-300.fc37.x86_64
+  Runtime: Groovy 3.0.13 on OpenJDK 64-Bit Server VM 17.0.3-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 3207632@kadath [77.235.248.125]
+  CPUs: 24 - Mem: 125.7 GB (22.4 GB) - Swap: 157 GB (101 GB)
+Mar-16 17:01:43.601 [main] DEBUG nextflow.Session - Work-dir: /home/jay/master_thesis/scripts/amr_finding/work [btrfs]
+Mar-16 17:01:43.601 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/jay/master_thesis/scripts/amr_finding/bin
+Mar-16 17:01:43.640 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-16 17:01:43.661 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-16 17:01:43.746 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-16 17:01:43.805 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 25; maxThreads: 1000
+Mar-16 17:01:43.977 [main] DEBUG nextflow.Session - Session start
+Mar-16 17:01:46.578 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-16 17:01:46.640 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/moritz/data/data_submit/bins/; pattern: ErkenSum*; options: [type:dir]
+Mar-16 17:01:47.043 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 17:01:47.043 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 17:01:47.068 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-16 17:01:47.079 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=24; memory=125.7 GB; capacity=24; pollInterval=100ms; dumpInterval=5m
+Mar-16 17:01:47.340 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 17:01:47.340 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 17:01:47.360 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 17:01:47.365 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 17:01:47.390 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 17:01:47.391 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 17:01:47.421 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-16 17:01:47.421 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-16 17:01:47.444 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: run_abricate, parse_checkm_summary, run_gtdbtk, run_rgi, checkm_process
+Mar-16 17:01:47.445 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-16 17:01:47.445 [main] DEBUG nextflow.Session - Session await
+Mar-16 17:01:47.672 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-16 17:01:47.678 [Task submitter] INFO  nextflow.Session - [52/108cd9] Submitted process > run_rgi (1)
+Mar-16 17:01:47.698 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-16 17:01:47.703 [Task submitter] INFO  nextflow.Session - [ca/4e6e5c] Submitted process > run_gtdbtk (1)
+Mar-16 17:01:47.787 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-16 17:01:47.798 [Task submitter] INFO  nextflow.Session - [ef/8a8b8a] Submitted process > run_abricate (1)
+Mar-16 17:01:47.833 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-16 17:01:47.840 [Task submitter] INFO  nextflow.Session - [ae/a77cdc] Submitted process > checkm_process (1)
+Mar-16 17:06:47.263 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:11:47.326 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:16:47.342 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:21:47.429 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:26:47.540 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:31:47.569 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:36:47.572 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:41:47.642 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:46:47.644 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:51:47.688 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 17:56:47.775 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:01:47.850 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:06:47.899 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:11:47.964 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:16:48.050 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:21:48.179 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:26:48.155 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:31:48.205 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:36:48.304 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:41:48.323 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:46:48.371 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:51:48.387 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 18:56:48.403 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:01:48.414 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:06:48.495 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:11:48.521 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:16:48.586 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:21:48.644 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:26:48.698 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:31:48.790 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:36:48.839 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:41:48.896 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:46:48.938 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:51:48.950 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 19:56:49.030 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:01:49.094 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:06:49.122 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:11:49.209 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:16:49.265 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:21:49.317 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:26:49.357 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 2; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:31:16.499 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: run_abricate (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ef/8a8b8ad93598ffef00789765c172c0]
+Mar-16 20:31:16.759 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-16 20:31:49.438 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:36:49.470 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:41:49.525 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:46:49.534 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:51:49.583 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 20:56:49.685 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:01:49.798 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:06:49.898 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:11:49.948 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:16:50.022 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:21:50.081 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 4; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:22:00.361 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: run_gtdbtk (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ca/4e6e5cc238e9beda12b05dd065d2f6]
+Mar-16 21:26:50.085 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:31:50.149 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:36:50.242 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:41:50.299 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:46:50.311 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:51:50.324 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 21:56:50.384 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:01:50.413 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:06:50.419 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:11:50.482 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:16:50.504 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:21:50.556 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:26:50.615 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:31:50.717 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:36:50.807 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:41:50.834 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:46:50.853 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:51:50.873 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 22:56:50.916 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:01:50.954 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:06:50.962 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:11:51.006 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:16:51.098 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:21:51.105 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:26:51.121 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:31:51.149 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:36:51.234 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:41:51.320 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:46:51.385 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:51:51.426 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-16 23:56:51.482 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:01:51.508 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:06:51.598 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:11:51.683 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:16:51.713 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:21:51.725 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:26:51.795 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:31:51.806 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:36:51.863 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:41:51.920 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:46:51.972 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:51:52.021 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 00:56:52.038 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:01:52.043 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:06:52.093 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:11:52.114 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:16:52.185 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:21:52.230 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:26:52.320 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:31:52.332 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:36:52.405 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:41:52.466 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:46:52.532 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:51:52.597 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 01:56:52.636 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:01:52.722 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:06:52.822 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:11:52.916 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:16:52.995 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:21:53.035 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:26:53.050 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:31:53.093 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:36:53.110 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:41:53.206 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:46:53.273 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:51:53.364 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 02:56:53.377 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:01:53.394 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:06:53.407 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:11:53.473 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:16:53.505 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:21:53.518 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:26:53.574 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:31:53.593 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:36:53.645 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:41:53.746 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:46:53.806 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:51:53.837 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 03:56:53.852 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:01:53.884 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:06:53.951 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:11:54.011 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:16:54.031 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:21:54.120 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:26:54.221 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:31:54.244 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:36:54.284 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:41:54.342 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:46:54.366 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:51:54.416 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 04:56:54.529 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:01:54.537 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:06:54.562 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:11:54.610 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:16:54.652 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:21:54.707 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:26:54.786 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:31:54.798 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:36:54.872 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:41:54.885 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:46:54.902 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:51:54.964 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 05:56:54.968 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:01:54.975 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:06:55.050 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:11:55.062 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:16:55.105 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:21:55.198 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:26:55.275 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:31:55.340 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:36:55.443 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:41:55.465 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:46:55.477 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:51:55.510 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 06:56:55.545 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:01:55.627 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:06:55.696 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:11:55.769 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:16:55.829 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:21:55.883 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:26:55.957 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:31:55.979 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:36:55.989 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:41:56.032 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:46:56.075 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:51:56.148 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 07:56:56.216 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:01:56.239 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:06:56.309 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:11:56.335 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:16:56.428 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:21:56.448 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:26:56.469 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:31:56.535 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:36:56.584 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:41:56.683 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:46:56.769 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:51:56.868 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+~> TaskHandler[id: 1; name: checkm_process (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:54:44.891 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: checkm_process (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/ae/a77cdc821df4e787fa921ea516e438]
+Mar-17 08:54:45.015 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 08:54:45.019 [Task submitter] INFO  nextflow.Session - [f4/0a0de6] Submitted process > parse_checkm_summary (1)
+Mar-17 08:54:45.356 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: parse_checkm_summary (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/f4/0a0de6e3fa13b2377789306181bd00]
+Mar-17 08:56:56.936 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:01:57.014 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:06:57.022 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:11:57.085 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:16:57.142 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:21:57.202 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:26:57.259 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:31:57.291 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:36:57.345 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:41:57.349 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:46:57.444 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:51:57.493 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 09:56:57.557 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:01:57.633 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:06:57.697 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:11:57.745 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:16:57.807 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:21:57.877 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:26:57.956 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:31:57.998 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:36:58.010 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:41:58.027 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:46:58.104 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:51:58.170 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 10:56:58.262 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:01:58.268 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:06:58.318 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:11:58.399 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:16:58.401 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:21:58.405 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:26:58.423 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:31:58.458 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:36:58.554 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:41:58.598 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:46:58.668 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:51:58.711 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 11:56:58.740 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:01:58.797 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:06:58.874 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:11:58.894 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:16:58.937 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:21:59.005 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:26:59.098 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:31:59.188 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:36:59.268 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:41:59.343 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:46:59.354 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:51:59.363 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 12:56:59.428 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:01:59.482 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:06:59.497 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:11:59.536 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:16:59.637 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:21:59.659 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:26:59.730 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:31:59.768 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:36:59.865 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:41:59.941 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:47:00.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:52:00.059 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 13:57:00.092 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]
+Mar-17 14:02:00.111 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 3; name: run_rgi (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/52/108cd91f592b2e4658c29b8c235a84]

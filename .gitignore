@@ -7,3 +7,6 @@ analysis/
 
 #Ignore the work-folder created by nextflow
 work/
+
+#ignore all .files created by nextflow
+.nextflow*

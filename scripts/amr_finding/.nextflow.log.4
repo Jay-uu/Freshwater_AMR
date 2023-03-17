@@ -1,0 +1,210 @@
+Mar-17 12:07:04.748 [main] DEBUG nextflow.cli.Launcher - $> nextflow run amr_finding_230317.nf -resume
+Mar-17 12:07:05.091 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.10.6
+Mar-17 12:07:05.190 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/jay/.nextflow/plugins; core-plugins: nf-amazon@1.11.3,nf-azure@0.14.2,nf-codecommit@0.1.2,nf-console@1.0.4,nf-ga4gh@1.0.4,nf-google@1.4.5,nf-tower@1.5.6,nf-wave@0.5.3
+Mar-17 12:07:05.225 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-17 12:07:05.226 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-17 12:07:05.230 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-17 12:07:05.280 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-17 12:07:05.543 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Mar-17 12:07:05.630 [main] INFO  nextflow.cli.CmdRun - Launching `amr_finding_230317.nf` [suspicious_aryabhata] DSL2 - revision: e193f8bfa9
+Mar-17 12:07:05.631 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-17 12:07:05.631 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-17 12:07:05.656 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/jay/.nextflow/secrets/store.json
+Mar-17 12:07:05.664 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@732bb66d] - activable => nextflow.secret.LocalSecretsProvider@732bb66d
+Mar-17 12:07:05.883 [main] DEBUG nextflow.Session - Session UUID: 5c9fe105-c65d-41d8-8210-ae38592a8572
+Mar-17 12:07:05.883 [main] DEBUG nextflow.Session - Run name: suspicious_aryabhata
+Mar-17 12:07:05.884 [main] DEBUG nextflow.Session - Executor pool size: 24
+Mar-17 12:07:05.923 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-17 12:07:06.037 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.10.6 build 5843
+  Created: 23-01-2023 23:20 UTC (24-01-2023 00:20 CEST)
+  System: Linux 6.0.18-300.fc37.x86_64
+  Runtime: Groovy 3.0.13 on OpenJDK 64-Bit Server VM 17.0.3-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 540596@kadath [77.235.248.125]
+  CPUs: 24 - Mem: 125.7 GB (31.2 GB) - Swap: 157 GB (100.4 GB)
+Mar-17 12:07:06.187 [main] DEBUG nextflow.Session - Work-dir: /home/jay/master_thesis/scripts/amr_finding/work [btrfs]
+Mar-17 12:07:06.187 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/jay/master_thesis/scripts/amr_finding/bin
+Mar-17 12:07:06.228 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-17 12:07:06.245 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-17 12:07:06.312 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-17 12:07:06.330 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 25; maxThreads: 1000
+Mar-17 12:07:06.638 [main] DEBUG nextflow.Session - Session start
+Mar-17 12:07:09.448 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-17 12:07:09.870 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 12:07:09.871 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 12:07:09.880 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-17 12:07:09.885 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=24; memory=125.7 GB; capacity=24; pollInterval=100ms; dumpInterval=5m
+Mar-17 12:07:10.122 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 12:07:10.122 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 12:07:10.141 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 12:07:10.149 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 12:07:10.171 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 12:07:10.172 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 12:07:10.190 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 12:07:10.190 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 12:07:10.252 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 12:07:10.252 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 12:07:10.310 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: run_abricate, parse_checkm_summary, run_gtdbtk, run_rgi, checkm_process, combine_all
+Mar-17 12:07:10.311 [main] DEBUG nextflow.Session - Igniting dataflow network (7)
+Mar-17 12:07:10.328 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > checkm_process
+Mar-17 12:07:10.344 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > parse_checkm_summary
+Mar-17 12:07:10.347 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/jay/data/test_bins/; pattern: *; options: [type:dir]
+Mar-17 12:07:10.353 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > run_abricate
+Mar-17 12:07:10.354 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > run_rgi
+Mar-17 12:07:10.356 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > run_gtdbtk
+Mar-17 12:07:10.361 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > combine_all
+Mar-17 12:07:10.362 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-17 12:07:10.362 [main] DEBUG nextflow.Session - Session await
+Mar-17 12:07:10.827 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 12:07:10.834 [Task submitter] INFO  nextflow.Session - [57/fcbd56] Submitted process > run_gtdbtk (1)
+Mar-17 12:07:10.896 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 12:07:10.902 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [25/8315ed] Cached process > run_abricate (1)
+Mar-17 12:07:10.904 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [dd/7e5e9e] Cached process > run_abricate (2)
+Mar-17 12:07:10.905 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [5b/10fb9b] Cached process > run_rgi (1)
+Mar-17 12:07:10.906 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [04/3257c8] Cached process > run_rgi (2)
+Mar-17 12:07:10.906 [Task submitter] INFO  nextflow.Session - [5f/caa092] Submitted process > run_gtdbtk (2)
+Mar-17 12:07:10.910 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [0a/32165f] Cached process > checkm_process (2)
+Mar-17 12:07:10.918 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [b0/35674a] Cached process > checkm_process (1)
+Mar-17 12:07:10.937 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [09/06e059] Cached process > parse_checkm_summary (1)
+Mar-17 12:07:10.975 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [7a/48519f] Cached process > parse_checkm_summary (2)
+Mar-17 12:07:11.044 [Actor Thread 22] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-17 12:12:10.019 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 1; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/57/fcbd56249d0560957c760c0ba81882]
+~> TaskHandler[id: 8; name: run_gtdbtk (2); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/5f/caa09295a4f306f735d7257f443cd6]
+Mar-17 12:15:59.291 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: run_gtdbtk (2); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/5f/caa09295a4f306f735d7257f443cd6]
+Mar-17 12:15:59.349 [Task submitter] ERROR nextflow.processor.TaskProcessor - Error executing process > 'combine_all (1)'
+
+Caused by:
+  Unknown process directive: `$` -- Check script 'amr_finding_230317.nf' at line: 128
+
+nextflow.exception.IllegalDirectiveException: Unknown process directive: `$`
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.script.ProcessConfig.checkName(ProcessConfig.groovy:218)
+	at nextflow.script.ProcessConfig.methodMissing(ProcessConfig.groovy:237)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaClassImpl.invokeMissingMethod(MetaClassImpl.java:953)
+	at groovy.lang.MetaClassImpl.invokePropertyOrMissing(MetaClassImpl.java:1347)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1270)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.MetaObjectProtocol$invokeMethod.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:157)
+	at nextflow.script.ProcessConfig.invokeMethod(ProcessConfig.groovy:233)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:408)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:350)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)
+	at groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeOnDelegationObjects(ClosureMetaClass.java:424)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:350)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at Script_605a7e18$_runScript_closure6$_closure29.doCall(Script_605a7e18:128)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:428)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.with(DefaultGroovyMethods.java:365)
+	at org.codehaus.groovy.runtime.DefaultGroovyMethods.with(DefaultGroovyMethods.java:312)
+	at org.codehaus.groovy.runtime.dgm$882.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoMetaMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:226)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.call(PogoMetaMethodSite.java:73)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at nextflow.script.params.FileOutParam.getFilePatterns(FileOutParam.groovy:180)
+	at nextflow.script.params.FileOutParam$getFilePatterns$1.call(Unknown Source)
+	at nextflow.processor.TaskRun.memoizedMethodPriv$getOutputFilesNames(TaskRun.groovy:446)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:362)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:176)
+	at nextflow.processor.TaskRun$_closure1.doCall(TaskRun.groovy)
+	at nextflow.processor.TaskRun$_closure1.doCall(TaskRun.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.lambda$call$0(Memoize.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:137)
+	at org.codehaus.groovy.runtime.memoize.ConcurrentCommonCache.getAndPut(ConcurrentCommonCache.java:113)
+	at org.codehaus.groovy.runtime.memoize.Memoize$MemoizeFunction.call(Memoize.java:136)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at java_util_concurrent_Callable$call.call(Unknown Source)
+	at nextflow.processor.TaskRun.getOutputFilesNames(TaskRun.groovy)
+	at nextflow.processor.TaskBean.<init>(TaskBean.groovy:151)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at nextflow.processor.TaskRun.toTaskBean(TaskRun.groovy:841)
+	at nextflow.executor.local.LocalTaskHandler.buildTaskWrapper(LocalTaskHandler.groovy:125)
+	at nextflow.executor.local.LocalTaskHandler.submit(LocalTaskHandler.groovy:95)
+	at nextflow.processor.TaskPollingMonitor.submit(TaskPollingMonitor.groovy:196)
+	at nextflow.processor.LocalPollingMonitor.submit(LocalPollingMonitor.groovy:193)
+	at nextflow.processor.TaskPollingMonitor.submitPendingTasks(TaskPollingMonitor.groovy:562)
+	at nextflow.processor.TaskPollingMonitor.submitLoop(TaskPollingMonitor.groovy:387)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+	at groovy.lang.MetaClassImpl.invokeMethodClosure(MetaClassImpl.java:1048)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1142)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at groovy.lang.Closure.run(Closure.java:493)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Mar-17 12:15:59.374 [Task submitter] DEBUG nextflow.Session - Session aborted -- Cause: Unknown process directive: `$`
+Mar-17 12:15:59.396 [Task submitter] DEBUG nextflow.Session - The following nodes are still active:
+[process] combine_all
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Mar-17 12:15:59.407 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-17 12:15:59.407 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-17 12:15:59.414 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (1)
+Mar-17 12:15:59.445 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=1; ignoredCount=0; cachedCount=8; pendingCount=1; submittedCount=0; runningCount=-1; retriesCount=0; abortedCount=1; succeedDuration=8m 48s; failedDuration=0ms; cachedDuration=17m 55s;loadCpus=-1; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+Mar-17 12:15:59.604 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-17 12:15:59.675 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

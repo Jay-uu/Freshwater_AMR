@@ -1,0 +1,114 @@
+Mar-17 11:47:51.037 [main] DEBUG nextflow.cli.Launcher - $> nextflow run amr_finding_230317.nf -resume
+Mar-17 11:47:51.572 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.10.6
+Mar-17 11:47:51.649 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/jay/.nextflow/plugins; core-plugins: nf-amazon@1.11.3,nf-azure@0.14.2,nf-codecommit@0.1.2,nf-console@1.0.4,nf-ga4gh@1.0.4,nf-google@1.4.5,nf-tower@1.5.6,nf-wave@0.5.3
+Mar-17 11:47:51.672 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-17 11:47:51.673 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-17 11:47:51.677 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Mar-17 11:47:51.710 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-17 11:47:51.924 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Mar-17 11:47:51.968 [main] INFO  nextflow.cli.CmdRun - Launching `amr_finding_230317.nf` [zen_mayer] DSL2 - revision: 59f5e9b3f9
+Mar-17 11:47:51.973 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-17 11:47:51.978 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-17 11:47:52.007 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/jay/.nextflow/secrets/store.json
+Mar-17 11:47:52.024 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@d02f8d] - activable => nextflow.secret.LocalSecretsProvider@d02f8d
+Mar-17 11:47:52.212 [main] DEBUG nextflow.Session - Session UUID: 5c9fe105-c65d-41d8-8210-ae38592a8572
+Mar-17 11:47:52.212 [main] DEBUG nextflow.Session - Run name: zen_mayer
+Mar-17 11:47:52.212 [main] DEBUG nextflow.Session - Executor pool size: 24
+Mar-17 11:47:52.240 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-17 11:47:52.353 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.10.6 build 5843
+  Created: 23-01-2023 23:20 UTC (24-01-2023 00:20 CEST)
+  System: Linux 6.0.18-300.fc37.x86_64
+  Runtime: Groovy 3.0.13 on OpenJDK 64-Bit Server VM 17.0.3-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 4016083@kadath [77.235.248.125]
+  CPUs: 24 - Mem: 125.7 GB (5.4 GB) - Swap: 157 GB (100.6 GB)
+Mar-17 11:47:52.623 [main] DEBUG nextflow.Session - Work-dir: /home/jay/master_thesis/scripts/amr_finding/work [btrfs]
+Mar-17 11:47:52.624 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/jay/master_thesis/scripts/amr_finding/bin
+Mar-17 11:47:52.661 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-17 11:47:52.725 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-17 11:47:52.850 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-17 11:47:52.905 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 25; maxThreads: 1000
+Mar-17 11:47:53.279 [main] DEBUG nextflow.Session - Session start
+Mar-17 11:47:57.139 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-17 11:47:57.800 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 11:47:57.801 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 11:47:57.829 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-17 11:47:57.851 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=24; memory=125.7 GB; capacity=24; pollInterval=100ms; dumpInterval=5m
+Mar-17 11:47:58.120 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 11:47:58.121 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 11:47:58.138 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 11:47:58.138 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 11:47:58.155 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 11:47:58.156 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 11:47:58.172 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 11:47:58.172 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 11:47:58.251 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-17 11:47:58.252 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-17 11:47:58.277 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: run_abricate, parse_checkm_summary, run_gtdbtk, run_rgi, checkm_process, combine_all
+Mar-17 11:47:58.281 [main] DEBUG nextflow.Session - Igniting dataflow network (7)
+Mar-17 11:47:58.287 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > checkm_process
+Mar-17 11:47:58.298 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > parse_checkm_summary
+Mar-17 11:47:58.292 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/jay/data/test_bins/; pattern: *; options: [type:dir]
+Mar-17 11:47:58.302 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > run_abricate
+Mar-17 11:47:58.303 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > run_rgi
+Mar-17 11:47:58.303 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > run_gtdbtk
+Mar-17 11:47:58.316 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > combine_all
+Mar-17 11:47:58.337 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-17 11:47:58.337 [main] DEBUG nextflow.Session - Session await
+Mar-17 11:47:58.914 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [04/3257c8] Cached process > run_rgi (2)
+Mar-17 11:47:59.055 [Actor Thread 25] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-17 11:47:59.131 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 11:47:59.156 [Task submitter] INFO  nextflow.Session - [0a/32165f] Submitted process > checkm_process (2)
+Mar-17 11:47:59.188 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 11:47:59.194 [Task submitter] INFO  nextflow.Session - [2f/1aa394] Submitted process > run_gtdbtk (2)
+Mar-17 11:47:59.246 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 11:47:59.258 [Task submitter] INFO  nextflow.Session - [5b/10fb9b] Submitted process > run_rgi (1)
+Mar-17 11:47:59.295 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 11:47:59.305 [Task submitter] INFO  nextflow.Session - [dd/7e5e9e] Submitted process > run_abricate (2)
+Mar-17 11:47:59.355 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 11:47:59.370 [Task submitter] INFO  nextflow.Session - [b0/35674a] Submitted process > checkm_process (1)
+Mar-17 11:47:59.455 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 11:47:59.469 [Task submitter] INFO  nextflow.Session - [25/8315ed] Submitted process > run_abricate (1)
+Mar-17 11:47:59.488 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 11:47:59.500 [Task submitter] INFO  nextflow.Session - [41/c85e90] Submitted process > run_gtdbtk (1)
+Mar-17 11:49:23.372 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: run_rgi (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/5b/10fb9b308dfc312d20de2c19751c0e]
+Mar-17 11:49:28.040 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: run_abricate (2); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/dd/7e5e9ee131c7e0d35fb91b1f2bf5a3]
+Mar-17 11:51:51.683 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: checkm_process (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/b0/35674ac570d8a083283eaa94524ab1]
+Mar-17 11:51:51.750 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 11:51:51.751 [Task submitter] INFO  nextflow.Session - [09/06e059] Submitted process > parse_checkm_summary (1)
+Mar-17 11:51:52.136 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: parse_checkm_summary (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/09/06e05987db94b7eb5a08f807fc6e23]
+Mar-17 11:52:22.934 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: checkm_process (2); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/0a/32165f58121cb0debbf187f2ab4ac1]
+Mar-17 11:52:22.958 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-17 11:52:22.963 [Task submitter] INFO  nextflow.Session - [7a/48519f] Submitted process > parse_checkm_summary (2)
+Mar-17 11:52:23.215 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: parse_checkm_summary (2); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/7a/48519ff0c6df8fa360f2d7ad3613db]
+Mar-17 11:52:58.006 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: run_gtdbtk (2); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/2f/1aa39481a9b115a763f6b533f2c1db]
+~> TaskHandler[id: 7; name: run_abricate (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/25/8315ed99e7743ac1eac4f2fd5f9ca1]
+~> TaskHandler[id: 1; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/41/c85e903e15efacf81347491e5fa75a]
+Mar-17 11:53:58.021 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: run_abricate (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/25/8315ed99e7743ac1eac4f2fd5f9ca1]
+Mar-17 11:57:58.080 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 2; name: run_gtdbtk (2); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/2f/1aa39481a9b115a763f6b533f2c1db]
+~> TaskHandler[id: 1; name: run_gtdbtk (1); status: RUNNING; exit: -; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/41/c85e903e15efacf81347491e5fa75a]
+Mar-17 11:59:00.656 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: run_gtdbtk (2); status: COMPLETED; exit: 0; error: -; workDir: /home/jay/master_thesis/scripts/amr_finding/work/2f/1aa39481a9b115a763f6b533f2c1db]
+Mar-17 11:59:00.662 [Actor Thread 16] DEBUG nextflow.processor.TaskProcessor - Process combine_all > collision check staging file names: [Erken-D1_abricate.tab:1, Erken-D1_summary.json:1, Erken-D1_res:2]
+Mar-17 11:59:00.715 [Actor Thread 16] ERROR nextflow.processor.TaskProcessor - Error executing process > 'combine_all (1)'
+
+Caused by:
+  Process `combine_all` input file name collision -- There are multiple input files for each of the following file names: Erken-D1_res
+
+
+Tip: you can replicate the issue by changing to the process work dir and entering the command `bash .command.run`
+Mar-17 11:59:00.720 [Actor Thread 16] DEBUG nextflow.Session - Session aborted -- Cause: Process `combine_all` input file name collision -- There are multiple input files for each of the following file names: Erken-D1_res
+Mar-17 11:59:00.755 [Actor Thread 16] DEBUG nextflow.Session - The following nodes are still active:
+[process] combine_all
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Mar-17 11:59:00.757 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-17 11:59:00.757 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-17 11:59:00.786 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (1)
+Mar-17 11:59:00.827 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=8; failedCount=0; ignoredCount=0; cachedCount=1; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=1; succeedDuration=28m 9s; failedDuration=0ms; cachedDuration=46.9s;loadCpus=0; loadMemory=0; peakRunning=7; peakCpus=7; peakMemory=0; ]
+Mar-17 11:59:00.998 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-17 11:59:01.029 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
