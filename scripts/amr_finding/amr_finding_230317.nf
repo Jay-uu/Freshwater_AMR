@@ -81,7 +81,7 @@ process run_rgi{
     mkdir \${sample_ID}_bins
     for bin in $sample/*.tar.gz
     do
-    tar -xf \$bin -C \${sample_ID}_bins --wildcards '*.faa.gz' --strip-components=3
+        tar -xf \$bin -C \${sample_ID}_bins --wildcards '*.faa.gz' --strip-components=3
     done
     
     gunzip \${sample_ID}_bins/*.faa.gz
@@ -89,9 +89,14 @@ process run_rgi{
     mkdir \${sample_ID}_res
     for file in \${sample_ID}_bins/*
     do
-    echo "running bin: \$file"
-    BIN_ID=`basename \$file .faa`
-    rgi main --input_sequence \$file --output_file \${sample_ID}_res/\${BIN_ID} -t protein -n 23 -a DIAMOND --low_quality --clean
+        line_countr=`cat \$file | wc -l`
+        if [ \$line_countr == 0 ]; then
+            echo "Empty bin, skipped: \$file"
+        else
+            echo "running bin: \$file"
+            BIN_ID=`basename \$file .faa`
+            rgi main --input_sequence \$file --output_file \${sample_ID}_res/\${BIN_ID} -t protein -n 23 -a DIAMOND --low_quality --clean
+        fi
     done
     date
     echo '===== Done ${sample.baseName} ====='
