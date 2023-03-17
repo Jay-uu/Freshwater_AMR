@@ -50,7 +50,8 @@ index['ARO Accession'] = index['ARO Accession'].str.replace(r'ARO:', '')
 
 print('====== Reading and formatting abricate results======')
 abricate = pd.read_csv(abricate_file, sep='\t', header=0)
-abricate['#FILE']=abricate['#FILE'].str.replace(r'bins/','')
+#abricate['#FILE']=abricate['#FILE'].str.replace(r'bins/','')
+abricate['#FILE']=abricate['#FILE'].map(os.path.basename)
 
 print('Adding ARO terms')
 # Add ARO terms to abricate results
