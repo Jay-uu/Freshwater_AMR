@@ -10,3 +10,6 @@ work/
 
 #ignore all .files created by nextflow
 .nextflow*
+
+#ignore my conda environments for the project
+conda_envs/
