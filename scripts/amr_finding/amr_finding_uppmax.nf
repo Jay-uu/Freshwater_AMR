@@ -9,6 +9,7 @@ With quality eval and taxonomic identification
 
 process checkm_process{
     publishDir "${params.publish_dir}/01_checkm", mode: 'copy'
+    conda '${params.envs_dir}/checkm-1.2.2'
     input:
     path sample
     output:
@@ -45,6 +46,7 @@ process parse_checkm_summary{
 
 process run_abricate{
     publishDir "${params.publish_dir}/02_abricate", mode: 'copy'
+    conda '${params.envs_dir}/abricate-1.0.0'
     input:
     path sample
     output:
@@ -65,6 +67,7 @@ process run_abricate{
 
 process run_rgi{
     publishDir "${params.publish_dir}/03_rgi", mode: 'copy'
+    conda '${params.envs_dir}/rgi-6.0.2'
     input:
     path sample
     output:
@@ -91,6 +94,7 @@ process run_rgi{
 
 process run_gtdbtk{
     publishDir "${params.publish_dir}/04_gtdbtk", mode: 'copy'
+    conda '${params.envs_dir}/gtdbtk-2.1.1'
     input:
     path sample
     output:
@@ -130,6 +134,7 @@ workflow {
         .set { dirs }
     //results directory
     params.publish_dir='/proj/fume/INSERTNAMEHERE'
+    params.envs_dir='/proj/fume/nobackup/private/jay/Freshwater_AMR/conda_envs'
 
     checkm_process(dirs.bin_dirs_checkm) | parse_checkm_summary
     run_abricate(dirs.bin_dirs_abricate)
