@@ -9,11 +9,11 @@ With quality eval and taxonomic identification
 
 process checkm_process{
     publishDir "${params.publish_dir}/01_checkm", mode: 'copy'
-    conda '${params.envs_dir}/checkm-1.2.2'
-    input:
+    conda "${params.envs_dir}/checkm-1.2.2"
+    input : 
     path sample
-    output:
-    tuple val("${sample.baseName}"), path("${sample.baseName}_summary.txt")
+    output :  
+    tuple val("${sample.baseName}"), path("${sample.baseName}_summary.txt")    
     """
     echo '===== Start ${sample.baseName} ====='
     date
@@ -46,7 +46,7 @@ process parse_checkm_summary{
 
 process run_abricate{
     publishDir "${params.publish_dir}/02_abricate", mode: 'copy'
-    conda '${params.envs_dir}/abricate-1.0.0'
+    conda "${params.envs_dir}/abricate-1.0.0"
     input:
     path sample
     output:
@@ -67,7 +67,7 @@ process run_abricate{
 
 process run_rgi{
     publishDir "${params.publish_dir}/03_rgi", mode: 'copy'
-    conda '${params.envs_dir}/rgi-6.0.2'
+    conda "${params.envs_dir}/rgi-6.0.2"
     input:
     path sample
     output:
@@ -82,8 +82,7 @@ process run_rgi{
         tar -xf \$bin -C \${sample_ID}_bins --wildcards '*.faa.gz' --strip-components=3
     done
     
-    zcat \${sample_ID}_bins/*.faa.gz > \${sample_ID}.faa.gz
-    gunzip \${sample_ID}.faa.gz
+    zcat \${sample_ID}_bins/*.faa.gz > \${sample_ID}.faa
     sed -i 's/[*]//g' \${sample_ID}.faa
     mkdir \${sample_ID}_res
     rgi main --input_sequence \${sample_ID}.faa --output_file \${sample_ID}_res/\${sample_ID} -t protein -n 23 -a DIAMOND --low_quality --clean
@@ -93,14 +92,15 @@ process run_rgi{
 }
 
 process run_gtdbtk{
+    debug "${params.envs_dir}/checkm-1.2.22"
     publishDir "${params.publish_dir}/04_gtdbtk", mode: 'copy'
-    conda '${params.envs_dir}/gtdbtk-2.1.1'
+    conda "${params.envs_dir}/gtdbtk-2.1.1"
     input:
     path sample
     output:
     tuple val("${sample.baseName}"), path("${sample.baseName}_result")
     """
-    echo '===== Running ${sample.baseName} ====='
+    echo "===== Running ${sample.baseName} ====="
     date
     mkdir ${sample.baseName}_bins
     mkdir ${sample.baseName}_res
@@ -129,12 +129,12 @@ process combine_all{
 workflow {
 
     Channel
-        .fromPath("/home/moritz/data/data_submit/bins/*", type:'dir')
+        .fromPath("/crex/proj/uppstore2017149/webexport/stratfreshdb/bins/*", type:'dir')
         .multiMap { bin_dirs -> bin_dirs_checkm: bin_dirs_abricate: bin_dirs_rgi: bin_dirs_gtdbtk: bin_dirs }
         .set { dirs }
     //results directory
-    params.publish_dir='/proj/fume/INSERTNAMEHERE'
-    params.envs_dir='/proj/fume/nobackup/private/jay/Freshwater_AMR/conda_envs'
+    params.publish_dir="/proj/fume/private/jay/amr_finding"
+    params.envs_dir="/proj/fume/nobackup/private/jay/Freshwater_AMR/conda_envs"
 
     checkm_process(dirs.bin_dirs_checkm) | parse_checkm_summary
     run_abricate(dirs.bin_dirs_abricate)
