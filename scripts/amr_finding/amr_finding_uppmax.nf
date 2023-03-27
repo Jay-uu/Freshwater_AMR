@@ -85,7 +85,7 @@ process run_rgi{
     zcat \${sample_ID}_bins/*.faa.gz > \${sample_ID}.faa
     sed -i 's/[*]//g' \${sample_ID}.faa
     mkdir \${sample_ID}_res
-    rgi main --input_sequence \${sample_ID}.faa --output_file \${sample_ID}_res/\${sample_ID} -t protein -n 23 -a DIAMOND --low_quality --clean
+    rgi main --input_sequence \${sample_ID}.faa --output_file \${sample_ID}_res/\${sample_ID} -t protein -n 20 -a DIAMOND --low_quality --clean
     date
     echo '===== Done ${sample.baseName} ====='
     """
