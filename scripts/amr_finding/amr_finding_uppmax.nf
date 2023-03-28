@@ -117,6 +117,7 @@ process run_gtdbtk{
 
 process combine_all{
     publishDir "${params.publish_dir}/05_combined_amr", mode: 'copy'
+    conda "${params.envs_dir}/pandas-1.5.3"
     input:
     tuple val(sample), path(checkm_res), path(abr_res), path(rgi_dir), path(gtdbtk_dir)
     output:
