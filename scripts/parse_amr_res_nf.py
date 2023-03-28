@@ -23,7 +23,7 @@ parser.add_argument("-o", "--output", dest = "output", help = "Name of output fi
 args = parser.parse_args()
 
 #File and directory paths
-index_file = r"/home/jay/data/amr_finding/aro_index.tsv"
+index_file = r"/crex/proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/amr_finding/aro_index.tsv"
 rgi_dir_path = args.rgi
 abricate_file = args.abr
 checkm_file = args.chm
