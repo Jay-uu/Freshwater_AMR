@@ -34,11 +34,11 @@ mmv "*_001.fastq.gz*" "#1#2"
 cd ..
 
 mkdir sig_files
-sourmash sketch dna reads/*.fastq.gz --outdir sig_files
+sourmash sketch dna reads/* --outdir sig_files
 
 sourmash compare sig_files/*.sig -o distances.cmp -k 31
 
-sourmash plot distances.cmp --output-dir $RESULTS
+sourmash plot --labels distances.cmp --output-dir $RESULTS
 cp distances.cmp $RESULTS/
 cp -r sig_files $RESULTS/
 cp distances.cmp.labels.txt $RESULTS/
