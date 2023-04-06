@@ -92,7 +92,8 @@ meta_rgi = rgi.loc[:,('SEQUENCE','ARO')]
 meta_rgi['%IDENTITY'] = rgi.loc[:,('Best_Identities')]
 meta_rgi['TOOL'] = 'RGI'
 meta = pd.concat([meta_abr,meta_rgi],ignore_index=True)
-meta.to_csv('erken_aro_info.csv', index=False)
+csv_name = args.output + '_aro_info.csv'
+meta.to_csv(csv_name, index=False)
 
 print('=====Reading checkm data======')
 with open(checkm_file) as f:
