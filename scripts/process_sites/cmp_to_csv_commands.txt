@@ -1,0 +1,19 @@
+#python code
+#import pandas, numpy 
+#dd = pandas.DataFrame(numpy.load('distances.cmp'))
+#with open("distances.cmp.labels.txt") as handle:
+#	labs = handle.readlines()
+#dd.columns = [l.strip().split("/")[1] for l in labs]
+#dd.index = [l.strip().split("/")[1] for l in labs]
+#dd.to_csv("distances.csv")
+
+#R code
+library(data.table)
+library(pheatmap)
+library(ggplot2)
+
+table = read.csv("distances.csv", row.names = 1)
+row.names(table) =  sapply(strsplit(row.names(table), "_"), function(x) paste0(x[1], "-" , x[3]) )
+colnames(table)=row.names(table)
+pheatmap(table, file = "sourmash_heatmap.pdf" , width = 20, height=15)
+pheatmap(log10(table), file = "sourmash_heatmap.pdf", width = 20, height=15)
