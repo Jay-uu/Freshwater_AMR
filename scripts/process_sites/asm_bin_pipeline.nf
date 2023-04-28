@@ -15,11 +15,11 @@ process assemble_water {
     output:
     tuple val($sample.baseName), path("${sample.baseName}_megahit.fa.gz"), path('*trimmed.fastq.gz')
     """
-    cd $sample
+    cp $sample/*trimmed.fastq.gz .
     sample_ID="${sample.baseName}"
-    read1=$(ls *R1* | grep -v / | xargs echo | sed 's/ /,/g')
-    read2=$(ls *R2* | grep -v / | xargs echo | sed 's/ /,/g')
-    megahit -1 \$read1 -2 \$read2 -o \${sample_ID}_asm --out-prefix \${sample_ID}_megahit --min-contig-len 1000
+    read1=`ls *R1* | grep -v / | xargs echo | sed 's/ /,/g'`
+    read2=`ls *R2* | grep -v / | xargs echo | sed 's/ /,/g'`
+    megahit -1 \$read1 -2 \$read2 -o \${sample_ID}_asm --out-prefix \${sample_ID}_megahit --min-contig-len 1000 -t 20
     mv \${sample_ID}_asm}/\${sample_ID}_megahit.contigs.fa \${sample_ID}_asm}/\${sample_ID}_megahit.fa
     gzip \${sample_ID}_asm}/\${sample_ID}_megahit.fa
     """
@@ -59,8 +59,7 @@ process map_reads_asm {
     r2=(*R2*trimmed.fastq.gz)
     for ((i = 0; i < \${#r1[@]} && i < \${#r2[@]}; i++))
     do
-    #double check samtools
-    read_samp=$(basename \${r1[i]} _R1_trimmed.fastq.gz)
+    read_samp=`basename \${r1[i]} _R1_trimmed.fastq.gz`
     bwa-mem2 mem -t 20 $sample "\${r1[i]}" "\${r2[i]}" | samtools view -@ 20 -bo \${read_samp}_map.bam
     samtools sort \${read_samp}_map.bam -o \${read_samp}_map_sorted.bam
     done
@@ -90,7 +89,7 @@ workflow {
     params.water_reads="/crex/proj/fume/private/jay/process_sites/02_fastp/group_sets/water"
     //params.soil_reads="/crex/proj/fume/private/jay/process_sites/02_fastp/group_sets/soil"
     
-    water = Channel.fromPath(${params.water_reads}/Abisko, type:'dir')
+    water = Channel.fromPath("${params.water_reads}/Abisko", type:'dir')
     assemble_water(water) | map_reads_asm  
 }
 
