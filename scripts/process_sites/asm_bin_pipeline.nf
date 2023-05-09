@@ -8,7 +8,7 @@ Trimmed reads have been sorted into different directories for different assembly
 */
 
 process assemble_water {
-    publishDir "${params.publish_dir}/03_megahit", mode: 'copy'
+    publishDir "${params.publish_dir}/03_megahit", mode: 'copy', pattern: "${sample.baseName}_asm/${sample.baseName}_megahit.fa.gz"
     conda "${params.envs_dir}/megahit-1.2.9"
     input:
     path sample
@@ -28,7 +28,7 @@ process assemble_water {
 
 
 process assemble_soil {
-    publishDir "${params.publish_dir}/03_megahit", mode: 'copy'
+    publishDir "${params.publish_dir}/03_megahit", mode: 'copy', pattern: "${sample.baseName}_asm/${sample.baseName}_megahit.fa.gz"
     conda "${params.envs_dir}/megahit-1.2.9"
     input:
     path sample
@@ -39,7 +39,7 @@ process assemble_soil {
     sample_ID="${sample.baseName}"
     read1=`ls *R1* | grep -v / | xargs echo | sed 's/ /,/g'`
     read2=`ls *R2* | grep -v / | xargs echo | sed 's/ /,/g'`
-    megahit -1 \$read1 -2 \$read2 -o \${sample_ID}_asm --out-prefix \${sample_ID}_megahit --min-contig-len 1000 -t 20 --presets meta-large
+    megahit -1 \$read1 -2 \$read2 -o \${sample_ID}_asm --out-prefix \${sample_ID}_megahit --min-contig-len 1000 -t 20 --presets meta-large --min-count 6
     mv \${sample_ID}_asm/\${sample_ID}_megahit.contigs.fa \${sample_ID}_asm/\${sample_ID}_megahit.fa
     gzip \${sample_ID}_asm/\${sample_ID}_megahit.fa
     """
@@ -78,19 +78,20 @@ process binning {
     module load bioinfo-tools MetaBat/2.12.1
     jgi_summarize_bam_contig_depths --outputDepth ${sample}_depth.txt *_sorted.bam
     mkdir ${sample}_bins
-    metabat2 -i ${asm} -a ${sample}_depth.txt -o ${sample}_bins/${sample}_megahit_metabat_bin- --unbinned
-
+    metabat2 -i ${asm} -a ${sample}_depth.txt -o ${sample}_bins/${sample}_bin- --unbinned
     #renaming bins and padding with 0s
     cd ${sample}_bins
-    rename bin-. bin- ${sample}_megahit_metabat_bin-*
+    #the zero-padding should only happen if more than 10 bins, otherwise error. Need to add code.
+    rename bin-. bin- ${sample}_bin-*
     bin_count=`ls *.fa | wc -l`
     char_count=`echo -n \$bin_count | wc -c`
     v=9
     for ((i=1; i < \$char_count-1; i++)); do v+=9; done
-    for (( i=1; i <= \$v; i++ )); do mv -- ${sample}_megahit_metabat_bin-\${i}.fa ${sample}_megahit_metabat_bin-\$(printf '%0*d\n' \$char_count \$i).fa; done
+    for (( i=1; i <= \$v; i++ )); do mv -- ${sample}_bin-\${i}.fa ${sample}_bin-\$(printf '%0*d\n' \$char_count \$i).fa; done
     cd ..
     """
 }
+
 process rename_contigs {
     publishDir "${params.publish_dir}/05_metabat", mode: 'copy'
     conda "${params.envs_dir}/biopython-1.78"
@@ -114,6 +115,7 @@ process rename_contigs {
     """
 }
 
+/*
 
 process prokka_annot {
     publishDir "${params.publish_dir}/06_prokka/", mode: 'copy'
@@ -123,17 +125,51 @@ process prokka_annot {
     tuple val("$sample"), path("$sample")
     """
     module load bioinfo-tools prokka/1.45-5b58020
-    mkdir $sample
+    mkdir ${sample}_prokka
     for bin in $bins_dir/*
     do
     bin_name=`basename \$bin .fa`
-    prokka --outdir \$bin_name --prefix \$bin_name \$bin --cpus 20
-    gzip \$bin_name/\$bin_name.*
+    prokka --outdir \${bin_name} --prefix \$bin_name \$bin --cpus 0
+    gzip \${bin_name}/\$bin_name.*
     tar -czf \${bin_name}.tar.gz \$bin_name
-    mv \${bin_name}.tar.gz $sample/
+    mv \${bin_name}.tar.gz ${sample}_prokka/
     done
     """
 }
+
+process rename_prokka_out {
+    publishDir "${params.publish_dir}/07_bins/", mode: 'copy'
+    conda "${params.envs_dir}/biopython-1.78"
+    input:
+    tuple val(sample), path(prokka_dir)
+    output:
+    tuple val("$sample"), path("$sample")
+    """
+    #want fna.gz, ffn.gz, faa.gz, gff.gz
+    mkdir $sample
+    for bin in $prokka_dir
+    do
+    mkdir ${sample}/\$bin
+    tar -xf $prokka_dir/\$bin -C ${sample}/\$bin --wildcards '*.fna.gz' --strip-components=1
+    tar -xf $prokka_dir/\$bin -C ${sample}/\$bin --wildcards '*.ffn.gz' --strip-components=1
+    tar -xf $prokka_dir/\$bin -C ${sample}/\$bin --wildcards '*.faa.gz' --strip-components=1
+    tar -xf $prokka_dir/\$bin -C ${sample}/\$bin --wildcards '*.gff.gz' --strip-components=1
+    done
+    #only ffn and faa are going to need to be renamed
+    for bin in ${sample}
+    do
+    cd ${sample}/\$bin
+    gunzip *.f*.gz
+    python rename_contigs.py -i \$bin/*.ffn -o \$bin/*.ffn
+    python rename_contigs.py -i \$bin/*.faa -o \$bin/*.faa
+    gzip *.f*
+    cd ..
+    tar -czf \${bin}.tar.gz \$bin
+    done
+    """
+}
+
+*/
 
 
 workflow {
@@ -148,19 +184,25 @@ workflow {
     
     //for testing
     //water_group = Channel.fromPath( "${params.water_groups}/Abisko", type:'dir' )
-    water = Channel.fromPath( "${params.water_singles}/Sample-A1/", type:'dir'  )
-    assemble_water(water) | map_reads_asm | binning | rename_contigs | prokka_annot
-/*
+    //water = Channel.fromPath( "${params.water_singles}/Sample-A1/", type:'dir'  )
+    //assemble_water(water) | map_reads_asm | binning | rename_contigs | prokka_annot
+
     water_coasm = Channel.fromPath( "${params.water_groups}/*", type:'dir' )
     soil_coasm = Channel.fromPath( "${params.soil_groups}/*", type:'dir' )
     water_single = Channel.fromPath( "${params.water_singles}/*", type:'dir'  )
     soil_single = Channel.fromPath( "${params.soil_singles}/*", type:'dir'  )
     
-    assemble_water(water_coasm) | map_reads_asm | binning | rename_contigs | prokka_annot
-    assemble_soil(soil_coasm) | map_reads_asm | binning | rename_contigs | prokka_annot
+    //concatenate channels
+    water = water_coasm.concat(water_single)
+    soil = soil_coasm.concat(soil_single)
+    assemble_water(water)
+    assemble_soil(soil)
+    all_samps = assemble_water.out.concat(assemble_soil.out)
+    map_reads_asm(all_samps) | binning | rename_contigs
+
+//assemble_water(water) | map_reads_asm | binning //| rename_contigs | prokka_annot
+  //  assemble_soil(soil_coasm) | map_reads_asm | binning //| rename_contigs | prokka_annot
     
-    assemble_water(water_single) | map_reads_asm | binning | rename_contigs | prokka_annot
-    assemble_soil(soil_single) | map_reads_asm | binning | rename_contigs | prokka_annot
-*/
+
 }
 
