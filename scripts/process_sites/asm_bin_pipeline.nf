@@ -79,15 +79,18 @@ process binning {
     jgi_summarize_bam_contig_depths --outputDepth ${sample}_depth.txt *_sorted.bam
     mkdir ${sample}_bins
     metabat2 -i ${asm} -a ${sample}_depth.txt -o ${sample}_bins/${sample}_bin- --unbinned
-    #renaming bins and padding with 0s
     cd ${sample}_bins
-    #the zero-padding should only happen if more than 10 bins, otherwise error. Need to add code.
     rename bin-. bin- ${sample}_bin-*
+    
+    #only zero pad if more than 10 bins (if 10 there's an unbinned too)
     bin_count=`ls *.fa | wc -l`
-    char_count=`echo -n \$bin_count | wc -c`
-    v=9
-    for ((i=1; i < \$char_count-1; i++)); do v+=9; done
-    for (( i=1; i <= \$v; i++ )); do mv -- ${sample}_bin-\${i}.fa ${sample}_bin-\$(printf '%0*d\n' \$char_count \$i).fa; done
+    if (($bin_count > 10));
+    then
+        char_count=`echo -n \$bin_count | wc -c`
+        v=9
+        for ((i=1; i < \$char_count-1; i++)); do v+=9; done
+        for (( i=1; i <= \$v; i++ )); do mv -- ${sample}_bin-\${i}.fa ${sample}_bin-\$(printf '%0*d\n' \$char_count \$i).fa; done
+    fi
     cd ..
     """
 }
@@ -115,7 +118,7 @@ process rename_contigs {
     """
 }
 
-/*
+
 
 process prokka_annot {
     publishDir "${params.publish_dir}/06_prokka/", mode: 'copy'
@@ -169,7 +172,7 @@ process rename_prokka_out {
     """
 }
 
-*/
+
 
 
 workflow {
@@ -198,7 +201,7 @@ workflow {
     assemble_water(water)
     assemble_soil(soil)
     all_samps = assemble_water.out.concat(assemble_soil.out)
-    map_reads_asm(all_samps) | binning | rename_contigs
+    map_reads_asm(all_samps) | binning | rename_contigs | prokka_annot | rename_prokka_out
 
 //assemble_water(water) | map_reads_asm | binning //| rename_contigs | prokka_annot
   //  assemble_soil(soil_coasm) | map_reads_asm | binning //| rename_contigs | prokka_annot
