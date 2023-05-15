@@ -20,7 +20,7 @@ process checkm_process{
     mkdir tmp_faa
     for arch in $sample/*.tar.gz
     do
-    tar -xf \$arch -C tmp_faa --wildcards '*.faa.gz' --strip-components=3
+    tar -xf \$arch -C tmp_faa --wildcards '*.faa.gz' --strip-components=2
     done
     gunzip tmp_faa/*.faa.gz
     checkm lineage_wf --genes -t 20 -x faa tmp_faa ${sample.baseName}_res
@@ -57,7 +57,7 @@ process run_abricate{
     mkdir ${sample.baseName}_bins
     for bin in $sample/*.tar.gz
     do
-    tar -xf \$bin -C ${sample.baseName}_bins --wildcards '*.ffn.gz' --strip-components=3
+    tar -xf \$bin -C ${sample.baseName}_bins --wildcards '*.ffn.gz' --strip-components=2
     done
     abricate --db card --minid 50 ${sample.baseName}_bins/*.ffn.gz > ${sample.baseName}_abricate.tab
     date
@@ -79,7 +79,7 @@ process run_rgi{
     mkdir \${sample_ID}_bins
     for bin in $sample/*.tar.gz
     do
-        tar -xf \$bin -C \${sample_ID}_bins --wildcards '*.faa.gz' --strip-components=3
+        tar -xf \$bin -C \${sample_ID}_bins --wildcards '*.faa.gz' --strip-components=2
     done
     
     zcat \${sample_ID}_bins/*.faa.gz > \${sample_ID}.faa
@@ -106,7 +106,7 @@ process run_gtdbtk{
     mkdir ${sample.baseName}_res
     for bin in $sample/*.tar.gz
     do
-    tar -xf \$bin -C ${sample.baseName}_bins --wildcards '*.fna.gz' --strip-components=3
+    tar -xf \$bin -C ${sample.baseName}_bins --wildcards '*.fna.gz' --strip-components=2
     done
     gtdbtk classify_wf --genome_dir ${sample.baseName}_bins --out_dir ${sample.baseName}_result --cpus 20 -x gz
     date
@@ -116,7 +116,7 @@ process run_gtdbtk{
 }
 
 process combine_all{
-    publishDir "${params.input_dir}/06_combined_contig_amr", mode: 'copy'
+    publishDir "${params.publish_dir}/06_combined_contig_amr", mode: 'copy'
     conda "${params.envs_dir}/pandas-1.5.3"
     input:
     tuple val(sample), path(checkm_res), path(abr_res), path(rgi_dir), path(gtdbtk_dir)
@@ -130,13 +130,15 @@ process combine_all{
 }
 
 workflow {
-
+    //note, strip components for buck-data = 3 and for sites data = 2
     Channel
-        .fromPath("/crex/proj/uppstore2017149/webexport/stratfreshdb/bins/*", type:'dir')
+        //.fromPath("/crex/proj/uppstore2017149/webexport/stratfreshdb/bins/*", type:'dir')
+        .fromPath( "/crex/proj/fume/private/jay/process_sites/07_bins/*", type: 'dir' )
         .multiMap { bin_dirs -> bin_dirs_checkm: bin_dirs_abricate: bin_dirs_rgi: bin_dirs_gtdbtk: bin_dirs }
         .set { dirs }
     //results directory
-    params.publish_dir="/proj/fume/private/jay/amr_finding"
+    //params.publish_dir="/proj/fume/private/jay/amr_finding"
+    params.publish_dir="/crex/proj/fume/private/jay/process_sites/08_amr_finding"
     params.envs_dir="/proj/fume/nobackup/private/jay/Freshwater_AMR/conda_envs"
 
     checkm_process(dirs.bin_dirs_checkm) | parse_checkm_summary

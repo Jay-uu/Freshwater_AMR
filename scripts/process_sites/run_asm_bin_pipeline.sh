@@ -3,8 +3,8 @@
 #SBATCH -p core -n 2
 #SBATCH -t 10-00:00:00 
 #SBATCH -J nf_asm_bin
-#SBATCH -o /proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/process_sites/logs/nextflow_asm20230509.log
-#SBATCH -e /proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/process_sites/logs/nextflow_asm20230509.err
+#SBATCH -o /proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/process_sites/logs/nextflow_asm20230510.log
+#SBATCH -e /proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/process_sites/logs/nextflow_asm20230510.err
 #SBATCH --mail-user jay.hakansson.4449@student.uu.se
 #SBATCH --mail-type=FAIL,END
 

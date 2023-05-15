@@ -84,7 +84,7 @@ process binning {
     
     #only zero pad if more than 10 bins (if 10 there's an unbinned too)
     bin_count=`ls *.fa | wc -l`
-    if (($bin_count > 10));
+    if ((\$bin_count > 10));
     then
         char_count=`echo -n \$bin_count | wc -c`
         v=9
@@ -125,7 +125,7 @@ process prokka_annot {
     input:
     tuple val(sample), path(bins_dir)
     output:
-    tuple val("$sample"), path("$sample")
+    tuple val("$sample"), path("${sample}_prokka")
     """
     module load bioinfo-tools prokka/1.45-5b58020
     mkdir ${sample}_prokka
@@ -150,24 +150,26 @@ process rename_prokka_out {
     """
     #want fna.gz, ffn.gz, faa.gz, gff.gz
     mkdir $sample
-    for bin in $prokka_dir
+    for bin in $prokka_dir/*.tar.gz
     do
-    mkdir ${sample}/\$bin
-    tar -xf $prokka_dir/\$bin -C ${sample}/\$bin --wildcards '*.fna.gz' --strip-components=1
-    tar -xf $prokka_dir/\$bin -C ${sample}/\$bin --wildcards '*.ffn.gz' --strip-components=1
-    tar -xf $prokka_dir/\$bin -C ${sample}/\$bin --wildcards '*.faa.gz' --strip-components=1
-    tar -xf $prokka_dir/\$bin -C ${sample}/\$bin --wildcards '*.gff.gz' --strip-components=1
+    bin_name=`basename \$bin .tar.gz`
+    mkdir ${sample}/\$bin_name
+    tar -xf \$bin -C ${sample}/\$bin_name --wildcards '*.fna.gz' --strip-components=1
+    tar -xf \$bin -C ${sample}/\$bin_name --wildcards '*.ffn.gz' --strip-components=1
+    tar -xf \$bin -C ${sample}/\$bin_name --wildcards '*.faa.gz' --strip-components=1
+    tar -xf \$bin -C ${sample}/\$bin_name --wildcards '*.gff.gz' --strip-components=1
     done
     #only ffn and faa are going to need to be renamed
-    for bin in ${sample}
+    for bin in ${sample}/*
     do
-    cd ${sample}/\$bin
+    cd \$bin
     gunzip *.f*.gz
-    python rename_contigs.py -i \$bin/*.ffn -o \$bin/*.ffn
-    python rename_contigs.py -i \$bin/*.faa -o \$bin/*.faa
+    python /crex/proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/process_sites/rename_contigs.py -i *.ffn -o *.ffn
+    python /crex/proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/process_sites/rename_contigs.py -i *.faa -o *.faa
     gzip *.f*
-    cd ..
+    cd ../..
     tar -czf \${bin}.tar.gz \$bin
+    rm -r \$bin
     done
     """
 }
