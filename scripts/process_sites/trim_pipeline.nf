@@ -1,3 +1,12 @@
+#!/usr/bin/env nextflow
+/*
+========================================================================================
+Trimming of raw reads
+========================================================================================
+----------------------------------------------------------------------------------------
+*/
+
+
 process fastp {
     publishDir "${params.publish_dir}/02_fastp", mode: 'copy'
     conda "${params.envs_dir}/fastp-0.23.2"
@@ -11,6 +20,7 @@ process fastp {
 
 }
 
+
 workflow {
     params.publish_dir="/proj/fume/private/jay/process_sites"
     params.envs_dir="/proj/fume/nobackup/private/jay/Freshwater_AMR/conda_envs"
@@ -19,5 +29,4 @@ workflow {
     raw_reads = Channel.fromPath( "/proj/fume/raw_data/SITES/SITES_metagenomes_Jan2023/*" , type: 'dir')
 
     fastp(raw_reads)
-
 }
