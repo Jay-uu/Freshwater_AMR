@@ -3,8 +3,8 @@
 #SBATCH -p core -n 20
 #SBATCH -t 7-00:00:00 
 #SBATCH -J clustering
-#SBATCH -o /proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/clustering/logs/clustering_sites_stratfresh_230525.log
-#SBATCH -e /proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/clustering/logs/clustering_sites_stratfresh_230525.err
+#SBATCH -o /proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/clustering/logs/clustering_sites_stratfresh_230529.log
+#SBATCH -e /proj/fume/nobackup/private/jay/Freshwater_AMR/scripts/clustering/logs/clustering_sites_stratfresh_230529.err
 #SBATCH --mail-user jay.hakansson.4449@student.uu.se
 #SBATCH --mail-type=FAIL,END
 
@@ -47,6 +47,9 @@ cd $RESULT
 #gunzip -r tmp_bins
 #printf '%s\n' tmp_bins/*.fna > bin_names.txt
 
+# I dont have checkm results for Loclat so will remove
+# rm tmp_bins/Loclat*.fna
+
 #echo "concatenating checkm-files"
 #cat $STRATFRESH_CHECKM/*.txt >> checkm.txt
 #cat $SITES_CHECKM/*.txt >> checkm.txt
@@ -54,7 +57,7 @@ cd $RESULT
 echo "===== Running motulizer ====="
 
 #run motulizer
-mOTUlize.py --fnas bin_names.txt --output mOTUs_sites_stratfresh.tsv --checkm checkm.txt --keep-simi-file sites_stratfresh_simi.txt --threads 20 --txt
+mOTUlize.py --fnas bin_names.txt --output mOTUs_sites_stratfresh.tsv --checkm sites_stratfresh_checkm_short.tsv --keep-simi-file sites_stratfresh_simi.txt --threads 20 --txt
 
 #rm -r tmp_bins
 #rm checkm.txt
