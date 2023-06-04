@@ -86,8 +86,20 @@ def add_bin_quality(df):
             df.loc[ind, 'bin_quality']='Rest'
     return df
 
-                
-#
+def add_sample_category(df):
+    water_list=['lake', 'coasm', 'reservoir', 'pond', 'sediment', 'ice', 'outlet']
+    soil_list= ['wetland','forest', 'fields']
+    water = pd.DataFrame()
+    soil = pd.DataFrame()
+    soil['type_group']='soil'
+    for w in water_list:
+        water = pd.concat([water, df[df['sample_subtype']==w]], ignore_index=True)
+    water['type_group']='water'
+    for s in soil_list:
+        soil = pd.concat([soil, df[df['sample_subtype']==s]], ignore_index=True)
+    soil['type_group']='soil'
+    return pd.concat([water,soil], ignore_index=True)                
+
 def plot_aro_counts_x(df, topnr = 10, title = '', log10 = False, use_names=False):
     if use_names == True:
         col = 'ARO_name'
@@ -102,19 +114,23 @@ def plot_aro_counts_x(df, topnr = 10, title = '', log10 = False, use_names=False
     top_x_aro_counts = top_x_aro_counts.drop(top_x_aro_counts.index[topnr:])
     top_x_aro_counts.plot(kind='barh', title = title)
 
-#not done also not working haha    
+   
 def plot_aros_by_species_count(df, topnr = 10, title = ''):
     group = df.groupby(['ARO_name', 'Lineage']).size().groupby(level=0).size()
-    group.sort_values(ascending=False)[:topnr].plot(kind='barh', title = title)
+    group.sort_values(ascending=False)[:topnr].plot(kind='barh', title = title,
+                                                    color = col, figsize=(5,5),
+                                                    fontsize=10)
     return group.sort_values(ascending=False)[:topnr]
     
-def plot_lineage_counts(df, topnr = 10, lineage = 'Lineage', title = '', log10 = False, col = 'tab:blue'): 
+def plot_lineage_counts(df, topnr = 10, lineage = 'Lineage', title = '', log10 = False, col = 'tab:blue', norm=False): 
     if log10 == True:
         lineage_count = np.log10(df[lineage].value_counts())
     else:
         lineage_count = df[lineage].value_counts()
+    if norm == True:
+        lineage_count=lineage_count/len(df)
     top_x_lineages = lineage_count.drop(lineage_count.index[topnr:])
-    top_x_lineages.plot(kind='barh', title = title, color = col, figsize=(15,15), fontsize=32)
+    top_x_lineages.plot(kind='barh', title = title, color = col, figsize=(5,5), fontsize=12)
     return top_x_lineages
     
 def bin_count_stats(df):
@@ -132,7 +148,24 @@ def pie_bin_quality(df, title=''):
                                                      title=title,
                                                      colors=col_pal, figsize=(6,6), fontsize=12)
 
-    
+def plot_drug_class(df, topnr = 10, title = '', col = 'tab:blue', norm=False):
+    #one ARO belongs to many drug classes. Will count it once for each it belongs to
+    dc = df['Drug_class'].str.split(';').explode()
+    count = dc.value_counts()
+    if norm == True:
+        #normalised by all drug class counts
+        count = (count/count.sum())*100
+    count[:topnr].plot(kind='barh', title = title, color = col, figsize=(5,5), fontsize=12, xlabel='% count/bins')
+    return count[:topnr]
+
+def plot_resistance_mechanism(df, topnr = 10, title = '', col = 'tab:blue', norm=False):
+    #one ARO has many resistances classes. similar to drug class
+    rm = df['Resistance_Mechanism'].str.split(';').explode()
+    count = rm.value_counts()
+    if norm == True:
+        count = (count/count.sum())*100
+    count[:topnr].plot(kind='barh', title = title, color = col, figsize=(5,5), fontsize=12)
+    return count[:topnr]
 
 #%%
 #read in dfs
@@ -207,8 +240,6 @@ v.get_label_by_id('10').set_text('\n'.join(A-B))
 v.get_label_by_id('11').set_text('\n'.join(A&B))
 v.get_label_by_id('01').set_text('\n'.join(B-A))
 plt.show()
-
-
 
 #%% venn diagram of amr gene overlap
 # sites_amr=plot_aros_by_species_count(sites, topnr = 20, title = 'sites aro by species')
