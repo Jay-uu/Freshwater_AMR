@@ -1,39 +1,39 @@
-unique code,label,sample type,comments,origin,site,sample_Set,,type,sub_type,main operator,DNA/RNA cc in ng/ul,sampling depth,sampling date,volume filtered ml,box id/box name,box details
-181445-1,2.63,DNA,,Norr Järsö utlopp 7,Erken,Erken_water,,lake,outlet,prune,0.216,,7/10/2018,200,298,E12
-170362,4.2,DNA,,Norr Järsö utlopp 7,Erken,Erken_water,,lake,outlet,prune,0.232,,2/15/2017,200,304,M11
-ABI1,A1,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,6.17,0.5,7/25/2017,625,298,K1
-ABI3,A3,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,5.98,0.5,8/9/2017,600,298,K3
-ABI4,A4,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,7.35,0.5,8/23/2017,600,298,K4
-ABI5,A5,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,3.31,0.5,9/6/2017,500,298,K5
-ABI6,A6,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,5.6,0.5,9/20/2017,550,298,K6
-ABI7,A7,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,5.81,0.5,10/4/2017,600,298,K7
-10-20190815-SM2,AS2,DNA,powersoil pro,Asa skogsmark 2,Asa,forest_wet_soils_1,,soil,forest,prune,96.4,,8/15/2019,,314,L8
-10-20190815-VM2,AS5,DNA,powersoil pro,Asa våtmark 2,Asa,forest_wet_soils_1,,wetland,,prune,39.9,,8/15/2019,,314,L11
-,ERK1,DNA,,Erken skogsmark,Erken,forest_soils_2,,soil,forest,prune,97.6,,8/27/2019,,314,F1
-,ERK6,DNA,,Erken våttmark,Erken,,,wetland,,prune,16.6,,8/27/2019,,314,F6
-,ERK8,DNA,,Erken sjösediment,Erken,Erken_water,,lake,sediment,prune,28.4,,8/27/2019,,314,F8
-,G1,DNA,,Grimsö mobacken,Grimsö,forest_wet_soils_1,,soil,forest,prune,30.4,,7/17/2019,,314,G7
-,G5,DNA,,Grimsö stormossen,Grimsö,forest_wet_soils_1,,wetland,,prune,29.2,,7/17/2019,,314,G11
-LÖN1,LÖN1,DNA,,Lönnstorp Jordbruksmark Block I (ruta1-8),Lönnstorp,forest_soils_2,,soil,fields,prune,4.5,,8/5/2019,,314,B4
-LÖN13,LÖN13,DNA,,Lönnstorp Skogsmark,Lönnstorp,forest_soils_2,,soil,forest,prune,54,,8/5/2019,,314,C4
-,LÖN18,DNA,,Lönnstorp Våttmark,Lönnstorp,forest_soils_2,,wetland,,prune,2.58,,8/5/2019,,314,E9
-LÖN5,LÖN5,DNA,,Lönnstorp Jordbruksmark Block I (ruta9-16),Lönnstorp,forest_soils_2,,soil,fields,prune,5.51,,8/5/2019,,314,B8
-LÖN9,LÖN9,DNA,,Lönnstorp Jordbruksmark Block I (ruta17-24),Lönnstorp,forest_soils_2,,soil,fields,prune,3.73,,8/5/2019,,314,B12
-RBD 10 R3-0020 N0 H1,RBD10,DNA,,Röbäcksdalen mark,Röbäcksdalen,robacksdalen_fields,,soil,fields,prune,7.57,,7/31/2019,,314,A10
-RBD 11 R3-0020 N120 H0,RBD11,DNA,,Röbäcksdalen mark,Röbäcksdalen,robacksdalen_fields,,soil,fields,prune,7.84,,7/31/2019,,314,A11
-RBD 12 R3-0020 N120 H1,RBD12,DNA,,Röbäcksdalen mark,Röbäcksdalen,robacksdalen_fields,,soil,fields,prune,9.39,,7/31/2019,,314,A12
-RBD 13 Skogsbete Gotland,RBD13,DNA,,Röbäcksdalen Skogsbete Gotland,Röbäcksdalen,forest_wet_soils_1,,soil,forest,prune,58.8,,7/31/2019,,314,B1
-,RBD16,DNA,,Röbäcksdalen strandkant,Röbäcksdalen,robacksdalen_fields,,wetland,,prune,30.1,,7/31/2019,,314,F10
-RBD 09 R3-0020 N0 H0,RBD9,DNA,,Röbäcksdalen mark,Röbäcksdalen,robacksdalen_fields,,soil,fields,prune,9.77,,7/31/2019,,314,A9
-5-70117010102 A,S11,DNA,,Skogaryd sjö ,Skogaryd,skogaryd_lake,,lake,,prune,5.85,3,3/28/2017,250,298,L11
-,S167,DNA,,Skogaryd sediment Ersjön 2,Skogaryd,skogaryd_lake,,sediment,,prune,6.11,,9/20/2019,,314,D5
-,S169,DNA,,Skogaryd skogsmark,Skogaryd,forest_wet_soils_1,,soil,forest,prune,27.9,,9/24/2019,,314,G1
-5-7011709010102 A,S38,DNA,,Skogaryd sjö,Skogaryd,skogaryd_lake,,lake,,prune,7.02,3,7/25/2017,150,304,A2
-5-7011711010102 A,S41,DNA,,Skogaryd sjö,Skogaryd,skogaryd_lake,,lake,,prune,5.41,3,8/21/2017,100,304,A5
-5-7011714010102 A,S60,DNA,,Skogaryd sjö,Skogaryd,skogaryd_lake,,lake,,prune,4.51,3,10/03/17,80,304,B12
-5-7011704010102 A,S93,DNA,,Skogaryd sjö,Skogaryd,skogaryd_lake,,lake,,prune,6.17,3,05/16/17,150,304,E9
-,Sv2,DNA,,Svartberget skogsmark,Svartberget,forest_wet_soils_1,,soil,forest,prune,6.47,,9/10/2019,,314,C8
-,Sv5,DNA,,Svartberget våtmark,Svartberget,forest_wet_soils_1,,wetland,,prune,2.41,,9/10/2019,,314,C11
-,Sv8,DNA,,Svartberget sjösediment,Svartberget,skogaryd_lake,,sediment,,prune,4.31,,9/10/2019,,314,D2
-,T56,DNA,,Tarfalasjön Lillsjön sediment,Tarfala,,,sediment,,prune,3.14,,9/12/2019,,314,E6
-,T58,DNA,,Tarfala Storglaciären is,Tarfala,,,ice,,prune,0.234,,9/12/2019,50,314,E11
+unique code,label,sample type,comments,origin,site,sample_Set,Unnamed: 7,type,sub_type,main operator,DNA/RNA cc in ng/ul,sampling depth,sampling date,volume filtered ml,box id/box name,box details,sample_name
+181445-1,2.63,DNA,,Norr Järsö utlopp 7,Erken,Erken_water,,lake,outlet,prune,0.216,,7/10/2018,200.0,298,E12,Sample-2-63
+170362,4.2,DNA,,Norr Järsö utlopp 7,Erken,Erken_water,,lake,outlet,prune,0.232,,2/15/2017,200.0,304,M11,Sample-4-20
+ABI1,A1,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,6.17,0.5,7/25/2017,625.0,298,K1,Sample-A1
+ABI3,A3,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,5.98,0.5,8/9/2017,600.0,298,K3,Sample-A3
+ABI4,A4,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,7.35,0.5,8/23/2017,600.0,298,K4,Sample-A4
+ABI5,A5,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,3.31,0.5,9/6/2017,500.0,298,K5,Sample-A5
+ABI6,A6,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,5.6,0.5,9/20/2017,550.0,298,K6,Sample-A6
+ABI7,A7,DNA,,Abisko site A,Abisko,Abisko,,lake,,prune,5.81,0.5,10/4/2017,600.0,298,K7,Sample-A7
+10-20190815-SM2,AS2,DNA,powersoil pro,Asa skogsmark 2,Asa,forest_wet_soils_1,,soil,forest,prune,96.4,,8/15/2019,,314,L8,Sample-AS2
+10-20190815-VM2,AS5,DNA,powersoil pro,Asa våtmark 2,Asa,forest_wet_soils_1,,wetland,,prune,39.9,,8/15/2019,,314,L11,Sample-AS5
+,ERK1,DNA,,Erken skogsmark,Erken,forest_soils_2,,soil,forest,prune,97.6,,8/27/2019,,314,F1,Sample-ERK1
+,ERK6,DNA,,Erken våttmark,Erken,,,wetland,,prune,16.6,,8/27/2019,,314,F6,Sample-ERK6
+,ERK8,DNA,,Erken sjösediment,Erken,Erken_water,,lake,sediment,prune,28.4,,8/27/2019,,314,F8,Sample-ERK8
+,G1,DNA,,Grimsö mobacken,Grimsö,forest_wet_soils_1,,soil,forest,prune,30.4,,7/17/2019,,314,G7,Sample-G1
+,G5,DNA,,Grimsö stormossen,Grimsö,forest_wet_soils_1,,wetland,,prune,29.2,,7/17/2019,,314,G11,Sample-G5
+LÖN1,LÖN1,DNA,,Lönnstorp Jordbruksmark Block I (ruta1-8),Lönnstorp,forest_soils_2,,soil,fields,prune,4.5,,8/5/2019,,314,B4,Sample-LON1
+LÖN13,LÖN13,DNA,,Lönnstorp Skogsmark,Lönnstorp,forest_soils_2,,soil,forest,prune,54.0,,8/5/2019,,314,C4,Sample-LON13
+,LÖN18,DNA,,Lönnstorp Våttmark,Lönnstorp,forest_soils_2,,wetland,,prune,2.58,,8/5/2019,,314,E9,Sample-LON18
+LÖN5,LÖN5,DNA,,Lönnstorp Jordbruksmark Block I (ruta9-16),Lönnstorp,forest_soils_2,,soil,fields,prune,5.51,,8/5/2019,,314,B8,Sample-LON5
+LÖN9,LÖN9,DNA,,Lönnstorp Jordbruksmark Block I (ruta17-24),Lönnstorp,forest_soils_2,,soil,fields,prune,3.73,,8/5/2019,,314,B12,Sample-LON9
+RBD 10 R3-0020 N0 H1,RBD10,DNA,,Röbäcksdalen mark,Röbäcksdalen,robacksdalen_fields,,soil,fields,prune,7.57,,7/31/2019,,314,A10,Sample-RBD10
+RBD 11 R3-0020 N120 H0,RBD11,DNA,,Röbäcksdalen mark,Röbäcksdalen,robacksdalen_fields,,soil,fields,prune,7.84,,7/31/2019,,314,A11,Sample-RBD11
+RBD 12 R3-0020 N120 H1,RBD12,DNA,,Röbäcksdalen mark,Röbäcksdalen,robacksdalen_fields,,soil,fields,prune,9.39,,7/31/2019,,314,A12,Sample-RBD12
+RBD 13 Skogsbete Gotland,RBD13,DNA,,Röbäcksdalen Skogsbete Gotland,Röbäcksdalen,forest_wet_soils_1,,soil,forest,prune,58.8,,7/31/2019,,314,B1,Sample-RBD13
+,RBD16,DNA,,Röbäcksdalen strandkant,Röbäcksdalen,robacksdalen_fields,,wetland,,prune,30.1,,7/31/2019,,314,F10,Sample-RBD16
+RBD 09 R3-0020 N0 H0,RBD9,DNA,,Röbäcksdalen mark,Röbäcksdalen,robacksdalen_fields,,soil,fields,prune,9.77,,7/31/2019,,314,A9,Sample-RBD9
+5-70117010102 A,S11,DNA,,Skogaryd sjö ,Skogaryd,skogaryd_lake,,lake,,prune,5.85,3.0,3/28/2017,250.0,298,L11,Sample-S11
+,S167,DNA,,Skogaryd sediment Ersjön 2,Skogaryd,skogaryd_lake,,sediment,,prune,6.11,,9/20/2019,,314,D5,Sample-S167
+,S169,DNA,,Skogaryd skogsmark,Skogaryd,forest_wet_soils_1,,soil,forest,prune,27.9,,9/24/2019,,314,G1,Sample-S169
+5-7011709010102 A,S38,DNA,,Skogaryd sjö,Skogaryd,skogaryd_lake,,lake,,prune,7.02,3.0,7/25/2017,150.0,304,A2,Sample-S38
+5-7011711010102 A,S41,DNA,,Skogaryd sjö,Skogaryd,skogaryd_lake,,lake,,prune,5.41,3.0,8/21/2017,100.0,304,A5,Sample-S41
+5-7011714010102 A,S60,DNA,,Skogaryd sjö,Skogaryd,skogaryd_lake,,lake,,prune,4.51,3.0,10/03/17,80.0,304,B12,Sample-S60
+5-7011704010102 A,S93,DNA,,Skogaryd sjö,Skogaryd,skogaryd_lake,,lake,,prune,6.17,3.0,05/16/17,150.0,304,E9,Sample-S93
+,Sv2,DNA,,Svartberget skogsmark,Svartberget,forest_wet_soils_1,,soil,forest,prune,6.47,,9/10/2019,,314,C8,Sample-Sv2
+,Sv5,DNA,,Svartberget våtmark,Svartberget,forest_wet_soils_1,,wetland,,prune,2.41,,9/10/2019,,314,C11,Sample-Sv5
+,Sv8,DNA,,Svartberget sjösediment,Svartberget,skogaryd_lake,,sediment,,prune,4.31,,9/10/2019,,314,D2,Sample-Sv8
+,T56,DNA,,Tarfalasjön Lillsjön sediment,Tarfala,,,sediment,,prune,3.14,,9/12/2019,,314,E6,Sample-T56
+,T58,DNA,,Tarfala Storglaciären is,Tarfala,,,ice,,prune,0.234,,9/12/2019,50.0,314,E11,Sample-T58
